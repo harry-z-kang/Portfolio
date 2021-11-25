@@ -11,7 +11,7 @@
     "img": "project2.jpg",
     "description": "This is the peripheral board that cotrols the headlight, blinkers, brake light, hazard and the horn of the car. It feaetures a Tiva TM4C123GH6PM MCU. The output voltage (12V) is controlled by 3 load switches (TPS2HB16-Q1A) which provides 6 channels. Those load switches have open circuit detectionn, voltage reporting, etc. functionalities. The information will be gathered and sent to our telemetry server for further analysis and debugginng purpose.",
     "github": "https://github.gatech.edu/GTSR/board-peripheral",
-    "website": "http://localhost:3000/static/media/project2.ac6a5123.jpg"
+    "website": "./static/media/project2.ac6a5123.jpg"
   },
   {
     "name": "GTSR Tiva Library",
@@ -31,6 +31,6 @@
     "name": "GTSR Solar Cell Monitor",
     "img": "project5.jpg",
     "description": "In order to gain finner graulairty on the solar module data (module-based compared to zone-based), Isaac Weintraub and I are developing this board as part of the solar cell aanlysis system. This board features a DS18B20 One-Wire temperature sensor and 2 ADC ports for voltage and shadow monitoring. The collected data will be sent to a backend server writte in Go for cell ideality calculation which will trigger re-simulation accordingly.",
-    "website": "http://localhost:3000/static/media/project5.178400f5.jpg"
+    "website": "./static/media/project5.178400f5.jpg"
   }
 ]
