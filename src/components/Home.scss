@@ -6,9 +6,13 @@
   }
 }
 
-
 @include mediaMd {
   .home__heading {
     margin-top: 10vh;
+  }
+
+  .container#home {
+    background: none;
+    padding-top: 8rem;
   }
 }

@@ -4,7 +4,7 @@ import "./Home.scss";
 
 const Home: FC = (): JSX.Element => {
   return (
-    <div className="container">
+    <div className="container" id="home">
       <h1 className="lg-heading home__heading">
         Harry <span className="text-secondary">Kang</span>
       </h1>
