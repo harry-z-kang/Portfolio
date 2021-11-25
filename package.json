@@ -2,7 +2,6 @@
   "name": "harry-kang-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Zkang0729.github.io/Portfolio",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
@@ -28,9 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -51,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.177",
-    "gh-pages": "^3.2.3"
+    "@types/lodash": "^4.14.177"
   }
 }
