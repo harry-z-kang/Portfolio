@@ -1,8 +1,12 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Header from "./common/Header";
 import "./AboutMe.scss";
 
 const AboutMe: FC = (): JSX.Element => {
+  useEffect(() => {
+    document.title = "About Me";
+  });
+
   return (
     <div className="container">
       <Header

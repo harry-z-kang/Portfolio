@@ -1,8 +1,12 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Header from "./common/Header";
 import "./Contact.scss";
 
 const Contact: FC = (): JSX.Element => {
+  useEffect(() => {
+    document.title = "Contact Me";
+  });
+
   return (
     <div className="container">
       <Header

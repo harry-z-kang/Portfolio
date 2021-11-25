@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +7,10 @@ import projects from "../projects.json";
 import "./Works.scss";
 
 const Works: FC = (): JSX.Element => {
+  useEffect(() => {
+    document.title = "My Work";
+  })
+
   return (
     <div className="container">
       <Header

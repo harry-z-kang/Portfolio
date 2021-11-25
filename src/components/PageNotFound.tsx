@@ -1,7 +1,12 @@
 import times from "lodash/times";
+import { useEffect } from "react";
 import "./PageNotFound.scss";
 
 const PageNotFound = (): JSX.Element => {
+  useEffect(() => {
+    document.title = "Page Not Found";
+  })
+
   return (
     <div className="matrix">
       <code>

@@ -11,7 +11,9 @@ enum NavTitle {
 
 const Navigation: FC = (): JSX.Element => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [title, setTitle] = useState<NavTitle>(NavTitle.Home);
+  const [title, setTitle] = useState<NavTitle>(
+    (window.location.href.split("/")[3] as NavTitle) || NavTitle.Home
+  );
 
   return (
     <div className="nav">

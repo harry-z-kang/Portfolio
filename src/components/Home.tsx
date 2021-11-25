@@ -1,8 +1,12 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Icons, { IconAlignment } from "./common/Icons";
 import "./Home.scss";
 
 const Home: FC = (): JSX.Element => {
+  useEffect(() => {
+    document.title = "Home";
+  })
+
   return (
     <div className="container" id="home">
       <h1 className="lg-heading home__heading">

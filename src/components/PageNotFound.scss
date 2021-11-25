@@ -15,13 +15,16 @@
 
 code {
   position: absolute;
-  width: 70%;
-  top: -50%;
+  width: 100vw;
+  height: 100vh;
+  top: -62%;
+  overflow: hidden;
   left: 50%;
   transform: translateX(-50%);
   font-size: 3rem;
-  color: #ccc;
+  background-color: rgba($primary-color, 0.5);
   text-align: center;
+  z-index: -1;
 }
 
 .cell-3-0,
