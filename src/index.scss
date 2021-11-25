@@ -1,6 +1,5 @@
 @import "config";
 
-@include background();
 
 * {
   margin: 0;
@@ -9,6 +8,9 @@
 }
 
 body {
+  background: $home-image;
+  background-attachment: fixed;
+  background-size: cover;
   background-color: $primary-color;
   color: set-text-color($primary-color);
   height: 100vh;
@@ -28,13 +30,13 @@ a {
 
 .container {
   padding: 4rem;
-  min-height: calc(100vh-60px);
+  background-color: rgba(#444, 0.8);
+  min-height: 100vh;
 }
 
 @include mediaMd {
   .container {
     width: 100%;
-    background-color: #444;
     padding: 2rem;
   }
 }

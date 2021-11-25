@@ -14,43 +14,63 @@ const AboutMe: FC = (): JSX.Element => {
         <div className="about__bio">
           <h3 className="text-secondary">BIO</h3>
           <p>
-            My name is Zixuan Kang, but most time people call me Harry. I'm
-            right now a freshman (sophomore by credit) in Georgia Tech. I major
-            in Computer Engineering right now and plan to minor in Computer
-            Science from my second year.
+            My name is Zixuan Kang, but most time people call me Harry. I'm a
+            senior majoring in Computer Engineering concentrating in VLSI Design
+            and Computer Architecture and minoring in Computer Science focusing
+            on system & Architecture @ Georgia Institute of Techology.
           </p>
         </div>
         <div className="about__job">
-          <h3>GT iOS Club</h3>
-          <h6>Learning Swift & Apple User Interface Design</h6>
+          <h3>GT Solar Racing</h3>
+          <h6>Auxiliary System Lead (Electrical Lead from January, 2022)</h6>
           <p>
-            I participated in the GT iOS Club since my second semester in
-            Gerogia Tech. Before participating in the club, I have already made
-            some small apps with swift and the powerful UI Kit. The club will
-            deepen my understanding of app coding and sharpen my skill in making
-            apps with swift.
+            - Reversed engineered a dongle terminator anddesigned a PCB
+            boardusing TivaTM that integrates the Rudman BUS &#60;=&#62; UART
+            &#60;=&#62; CAN BUS critical path instead of using the dongle
+            terminator and an Arduino as the CAN Transceiver. Reduced the
+            connection number on the critical path from 4 to 2 to improve the
+            stability and save the team $200 for dongle terminator replacement.
+            <br />
+            <br />- Designed an embedded system consists of a pair of PCB board
+            that controls the peripheralof the solar car and wrote thefirmware
+            code for TivaTMC Series Microcontroller used on the board, featuring
+            an acknowledgment system that enables several GPIO board on the car
+            at the same time to improve the modularization of different parts of
+            the solar car.
           </p>
         </div>
         <div className="about__job">
-          <h3>School Choir</h3>
-          <h6>Piano Accompanist & Partner Training</h6>
+          <h3>CS 3210 Operating System Design</h3>
+          <h6>Teachinng Assistant</h6>
           <p>
-            In my high school, I was the piano accompanist and we performed
-            every year on the shcool New Year Gala. Stepping into college, I
-            participated in the school Glee Club. This is a choir that doesn't
-            require an accompanist, but I still play for the choir when they are
-            practicing.
+            - Helped students with problems during classes/projects regarding
+            topics such as multi-threading, scheduling, synchronization,
+            communication, and access control. Projects will cover design and
+            implementation of several operating systems components.
+            <br />
+            <br />- For the labs of the course, we mainly modified the virtual
+            memory system (zero-lazy allocation and copy on write forking),
+            threading (building a one-to-one user-thread library), scheduling (A
+            system with FIFO and RR with preemption) and the booting process of
+            xv6(dynamically allocate space for the kernel after the bootloader
+            instead of static space allocation).
           </p>
         </div>
         <div className="about__job">
-          <h3>GT SCPC Tech Team</h3>
-          <h6>Web Development & Design</h6>
+          <h3>Arm Inc.</h3>
+          <h6>Verification Engieer Intern</h6>
           <p>
-            We are currently on a web application that can show most of the
-            activities of the Student Centre Program Council via React.js. We
-            are also building an API for volunteer application and volunteer
-            attendance at the backend. I'm in charge of the frontend and the
-            bhackend team focusing on data and the data analysis at the backend.
+            - Learned the concept and the general structure of Universal
+            Verification Methodology (UVM).
+            <br />
+            <br />- Experienced the complete of designing testing sequences
+            =&#62; writing stimulus =&#62; writing checkers =&#62; improving
+            coverage.
+            <br />
+            <br />- Debugged nightly regressions errors and categorize them
+            (whether they are RTL issues or Test Bench issues). Came up with
+            patches to fix those bugs. Helped the team to reach an important
+            milestone (Limited Access Control, LAC).
           </p>
         </div>
       </div>
