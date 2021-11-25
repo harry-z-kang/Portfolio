@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from "react";
+import { Routes, Route } from "react-router-dom";
+import Navigation from "./components/common//Navigation";
+import Home from "./components/Home";
+import AboutMe from "./components/AboutMe";
+import Works from "./components/Works";
+import Contact from "./components/Contact";
+import PageNotFound from "./components/PageNotFound";
+import "./App.scss";
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/AboutMe" element={<AboutMe />} />
+        <Route path="/MyWork" element={<Works />} />
+        <Route path="/ContactMe" element={<Contact />} />
+        <Route path="/*" element={<PageNotFound />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

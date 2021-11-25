@@ -1,0 +1,37 @@
+@import "../config";
+
+.about {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  &__bioImage {
+    grid-area: bioimage;
+    margin: auto;
+    background: url(../assets/portrait.jpg) no-repeat center center;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+
+  &__bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+
+  &__job {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+
+  @for $x from 1 through 3 {
+    &__job:nth-child(#{$x}) {
+      grid-area: job#{$x};
+    }
+  }
+}

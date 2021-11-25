@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Portfolio",
+    "img": "project1.jpg",
+    "description": "A portfolio website for a fictional company",
+    "github": "https://github.com/Zkang0729/Portfolio",
+    "website": "https://zkang0729.github.io/Portfolio/"
+  },
+  {
+    "name": "GT SCPC",
+    "img": "project4.jpg",
+    "description": "A portfolio website for a fictional company",
+    "github": "https://github.gatech.edu/scpc/live-it-up"
+  },
+  {
+    "name": "Rep Set Tech",
+    "img": "project5.jpg",
+    "description": "A portfolio website for a fictional company",
+    "github": "https://github.com/Zkang0729/repsettech",
+    "website": "https://zkang0729.github.io/repsettech/"
+  }
+]
