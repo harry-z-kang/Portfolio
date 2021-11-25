@@ -6,7 +6,7 @@ import Header from "./common/Header";
 import projects from "../projects.json";
 import "./Works.scss";
 
-const Works: FC = () => {
+const Works: FC = (): JSX.Element => {
   return (
     <div className="container">
       <Header

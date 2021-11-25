@@ -8,7 +8,7 @@ import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
 import "./App.scss";
 
-const App: FC = () => {
+const App: FC = (): JSX.Element => {
   return (
     <div>
       <Navigation />

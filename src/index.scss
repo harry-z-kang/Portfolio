@@ -17,24 +17,6 @@ body {
   line-height: 1.5;
 }
 
-//Headings
-h1,
-h2,
-h3 {
-  margin: 0;
-  font-weight: 400;
-
-  &.lg-heading {
-    font-size: 6rem;
-  }
-
-  &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
-  }
-}
-
 .text-secondary {
   color: $secondary-color;
 }
@@ -47,4 +29,12 @@ a {
 .container {
   padding: 4rem;
   min-height: calc(100vh-60px);
+}
+
+@include mediaMd {
+  .container {
+    width: 100%;
+    background-color: #444;
+    padding: 2rem;
+  }
 }

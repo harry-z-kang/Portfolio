@@ -1,7 +1,7 @@
 import times from "lodash/times";
 import "./PageNotFound.scss";
 
-const PageNotFound = () => {
+const PageNotFound = (): JSX.Element => {
   return (
     <div className="matrix">
       <code>
@@ -12,7 +12,9 @@ const PageNotFound = () => {
         <br /> A: Segmentation fault
       </code>
       {times(9, (i) =>
-        times(11, (j) => <div className={`cell cell-${i}-${j}`}></div>)
+        times(11, (j) => (
+          <div key={i * 10 + j} className={`cell cell-${i}-${j}`}></div>
+        ))
       )}
     </div>
   );

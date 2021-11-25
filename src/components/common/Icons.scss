@@ -27,3 +27,11 @@
     justify-content: end;
   }
 }
+
+@include mediaMd {
+  .icons {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+}

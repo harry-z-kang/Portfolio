@@ -2,7 +2,7 @@
 
 .about {
   display: grid;
-  grid-gap: 30px;
+  gap: 30px;
   grid-template-areas:
     "bioimage bio bio"
     "job1 job2 job3";
@@ -33,5 +33,17 @@
     &__job:nth-child(#{$x}) {
       grid-area: job#{$x};
     }
+  }
+}
+
+@include mediaMd {
+  .about {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+    grid-template-columns: 1fr;
   }
 }

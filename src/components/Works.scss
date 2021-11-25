@@ -3,7 +3,7 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.7rem;
+  gap: 0.7rem;
 
   &__item {
     &__card {
@@ -70,5 +70,11 @@
   &-light {
     background: lighten($primary-color, 50);
     color: #333;
+  }
+}
+
+@include mediaMd {
+  .projects {
+    grid-template-columns: 1fr;
   }
 }

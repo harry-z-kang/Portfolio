@@ -40,3 +40,16 @@
     }
   }
 }
+
+@include mediaMd {
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    div {
+      font-size: 14px;
+    }
+  }
+}

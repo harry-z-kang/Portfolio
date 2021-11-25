@@ -2,7 +2,7 @@ import { FC } from "react";
 import Header from "./common/Header";
 import "./AboutMe.scss";
 
-const AboutMe: FC = () => {
+const AboutMe: FC = (): JSX.Element => {
   return (
     <div className="container">
       <Header

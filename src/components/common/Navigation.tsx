@@ -9,7 +9,7 @@ enum NavTitle {
   ContactMe = "Contact Me",
 }
 
-const Navigation: FC = () => {
+const Navigation: FC = (): JSX.Element => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [title, setTitle] = useState<NavTitle>(NavTitle.Home);
 

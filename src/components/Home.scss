@@ -5,3 +5,10 @@
     margin-top: 20vh;
   }
 }
+
+
+@include mediaMd {
+  .home__heading {
+    margin-top: 10vh;
+  }
+}

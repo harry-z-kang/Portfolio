@@ -18,7 +18,7 @@ interface IconsProps {
   alignment: IconAlignment;
 }
 
-const Icons: FC<IconsProps> = ({ alignment = IconAlignment.Start }) => {
+const Icons: FC<IconsProps> = ({ alignment = IconAlignment.Start }): JSX.Element => {
   return (
     <div className={`icons icons-${alignment}`}>
       <a href="https://twitter.com/harry_z_kang">

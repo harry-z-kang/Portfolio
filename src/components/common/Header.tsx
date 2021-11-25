@@ -7,7 +7,7 @@ interface HeaderProps {
   smallHeading: string;
 }
 
-const Header: FC<HeaderProps> = ({ largeHeading, smallHeading }) => {
+const Header: FC<HeaderProps> = ({ largeHeading, smallHeading }): JSX.Element => {
   return (
     <div className="landing">
       <div className="landing__heading">

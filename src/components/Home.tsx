@@ -2,7 +2,7 @@ import { FC } from "react";
 import Icons, { IconAlignment } from "./common/Icons";
 import "./Home.scss";
 
-const Home: FC = () => {
+const Home: FC = (): JSX.Element => {
   return (
     <div className="container">
       <h1 className="lg-heading home__heading">
