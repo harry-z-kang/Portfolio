@@ -1,6 +1,5 @@
 @import "config";
 
-
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +31,35 @@ a {
   padding: 4rem;
   background-color: rgba(#444, 0.8);
   min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+
+  &-track {
+    background: $primary-color;
+  }
+
+  &-thumb {
+    background: rgba($secondary-color, 0.5);
+    border-radius: 10px;
+
+    &:hover {
+      background: rgba($secondary-color, 0.75);
+    }
+
+    &:active {
+      background: rgba($secondary-color, 1);
+    }
+
+    &::window-inactive {
+      background: rgba($secondary-color, 0.2);
+    }
+  }
+
+  &:disabled {
+    background: transparent;
+  }
 }
 
 @include mediaMd {
