@@ -9,7 +9,7 @@ import "./Works.scss";
 const Works: FC = (): JSX.Element => {
   useEffect(() => {
     document.title = "My Work";
-  })
+  });
 
   return (
     <div className="container">
@@ -22,10 +22,13 @@ const Works: FC = (): JSX.Element => {
           <div className="projects__item" key={index}>
             <a href={project.github} className="projects__item__card">
               <img
+                className="projects__item__card__img"
                 src={require(`../assets/project/${project.img}`).default}
                 alt={project.name}
               />
-              <p>{project.description}</p>
+              <p className="projects__item__card__desc">
+                {project.description}
+              </p>
             </a>
             <a href={project?.website} className="btn btn-light">
               <FontAwesomeIcon icon={faEye} /> {project.name}

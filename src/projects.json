@@ -2,7 +2,7 @@
   {
     "name": "Portfolio",
     "img": "project1.jpg",
-    "description": "Portfolio for myself. You can fid all my contact details of me on this website including my resume. The main framework of this website is ReactJS with support from Font Awesome annd React Route DOM for page routing. It took me around 8 hours to completely finish it with a relatively high code structure",
+    "description": "Portfolio for myself. You can fid all my contact details of me on this website including my resume. The main framework of this website is ReactJS with support from Font Awesome and React Route DOM for page routing. It took me around 8 hours to completely finish it with a relatively high code structure",
     "github": "https://github.com/Zkang0729/Portfolio",
     "website": "https://zkang0729.github.io/Portfolio/"
   },
@@ -16,7 +16,7 @@
   {
     "name": "GTSR Tiva Library",
     "img": "project3.jpg",
-    "description": "This library is developed based upon the Tivaware API. It involves several team members and takes around 3 years of time to become what it is right now. Since Tiva is the MCU that we use throughout the car, it makes sense to create aother layer of abstraction that fits our need and usage. My main contribution is the ADC library which can be found in gtsr_adc.h and gtsr_adc.c which provides ADC functionality. Future plann is to include extra features such as PWM, DMA and DCON.",
+    "description": "This library is developed based upon the Tivaware API. It involves several team members and takes around 3 years of time to become what it is right now. Since Tiva is the MCU that we use throughout the car, it makes sense to create aother layer of abstraction that fits our need and usage. My main contribution is the ADC library which can be found in gtsr_adc.h and gtsr_adc.c which provides ADC functionality. Future plan is to include extra features such as PWM, DMA and DCON.",
     "github": "https://github.gatech.edu/GTSR/tivalibs",
     "website": "https://github.gatech.edu/GTSR/tivalibs"
   },
