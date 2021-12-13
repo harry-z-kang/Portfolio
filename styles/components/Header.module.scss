@@ -1,0 +1,20 @@
+@import "../config";
+
+.landing {
+  display: grid;
+  grid-template-areas: "texts icons";
+  grid-template-columns: repeat(2, 1fr);
+
+  &__heading {
+    grid-area: texts;
+  }
+}
+
+@include mediaMd {
+  .landing {
+    grid-template-areas:
+      "texts"
+      "icons";
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,17 @@
+@import "config";
+
+.home {
+  &__heading {
+    margin-top: 20vh;
+  }
+}
+
+@include mediaMd {
+  .home__heading {
+    margin-top: 10vh;
+  }
+
+  .container#home {
+    padding-top: 8rem;
+  }
+}
