@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
+import { GetServerSideProps, GetServerSidePropsResult, NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
 import { server } from "../config";
@@ -14,22 +14,19 @@ interface aboutMeProps {
   activities: Activity[];
 }
 
-export const getStaticProps: GetStaticProps<aboutMeProps> = async (): Promise<
-  GetStaticPropsResult<aboutMeProps>
-> => {
-  const res = await fetch(`${server}/api/activities`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  const activities = await res.json();
+export const getServerSideProps: GetServerSideProps<aboutMeProps> =
+  async (): Promise<GetServerSidePropsResult<aboutMeProps>> => {
+    const res = await fetch(`${server}/api/activities`);
+    console.log(res);
+    const activities = await res.json();
+    console.log(activities);
 
-  return {
-    props: {
-      activities,
-    },
+    return {
+      props: {
+        activities,
+      },
+    };
   };
-};
 
 const AboutMe: NextPage<aboutMeProps> = ({ activities }): JSX.Element => {
   return (

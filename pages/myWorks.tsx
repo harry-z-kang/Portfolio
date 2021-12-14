@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
+import { GetServerSideProps, GetServerSidePropsResult, NextPage } from "next";
 import Image from "next/image";
 import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,22 +20,17 @@ interface myWorksProps {
   projects: Project[];
 }
 
-export const getStaticProps: GetStaticProps<myWorksProps> = async (): Promise<
-  GetStaticPropsResult<myWorksProps>
-> => {
-  const res = await fetch(`${server}/api/projects`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  const projects = await res.json();
+export const getServerSideProps: GetServerSideProps<myWorksProps> =
+  async (): Promise<GetServerSidePropsResult<myWorksProps>> => {
+    const res = await fetch(`${server}/api/projects`);
+    const projects = await res.json();
 
-  return {
-    props: {
-      projects,
-    },
+    return {
+      props: {
+        projects,
+      },
+    };
   };
-};
 
 const Works: NextPage<myWorksProps> = ({ projects }): JSX.Element => {
   return (
