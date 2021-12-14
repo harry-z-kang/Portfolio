@@ -1,19 +1,13 @@
 import { FC, useState } from "react";
+import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import navigationStyles from "../styles/components/Navigation.module.scss";
 
-const titleName: string[] = [
-  "",
-  "AboutMe",
-  "MyWorks",
-  "ContactMe",
-  "PageNotFound",
-];
+const titleName: string[] = ["", "aboutMe", "myWorks", "contactMe"];
 const navMenu: string[] = ["Home", "About Me", "My Works", "Contact Me"];
 
 const Navigation: FC = (): JSX.Element => {
-  const router = useRouter();
+  const router: NextRouter = useRouter();
 
   const [showMenu, setShowMenu] = useState<boolean>(false);
 

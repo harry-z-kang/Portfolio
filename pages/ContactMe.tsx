@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
-import contactMeStyles from "../styles/ContactMe.module.scss";
+import contactMeStyles from "../styles/contactMe.module.scss";
 
-const Contact: NextPage = () => {
+const Contact: NextPage = (): JSX.Element => {
   return (
     <div className="container">
       <Head>

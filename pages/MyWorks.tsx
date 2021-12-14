@@ -1,14 +1,39 @@
+import { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
+import Image from "next/image";
+import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/Header";
-import projects from "../public/projects.json";
-import myWorksStyles from "../styles/MyWorks.module.scss";
-import Image from "next/image";
-import Head from "next/head";
-import { NextPage } from "next";
+import { server } from "../config";
+import myWorksStyles from "../styles/myWorks.module.scss";
 
-const Works: NextPage = () => {
+interface Project {
+  description: string;
+  img: string;
+  github: string;
+  website: string;
+  name: string;
+}
+
+interface myWorksProps {
+  projects: Project[];
+}
+
+export const getStaticProps: GetStaticProps<myWorksProps> = async (
+  _
+): Promise<GetStaticPropsResult<myWorksProps>> => {
+  const res = await fetch(`${server}/api/projects`);
+  const projects = await res.json();
+
+  return {
+    props: {
+      projects,
+    },
+  };
+};
+
+const Works: NextPage<myWorksProps> = ({ projects }): JSX.Element => {
   return (
     <div className="container">
       <Head>

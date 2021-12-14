@@ -1,5 +1,5 @@
-import times from "lodash/times";
 import Head from "next/head";
+import times from "lodash/times";
 import four04Styles from "../styles/404.module.scss";
 
 const PageNotFound = (): JSX.Element => {
