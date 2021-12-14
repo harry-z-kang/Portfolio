@@ -54,7 +54,7 @@ const AboutMe: NextPage<aboutMeProps> = ({ activities }): JSX.Element => {
             <h5>{activity.description}</h5>
             <p>
               {activity.details.map((detail, index) => (
-                <span>
+                <span key={index}>
                   - {detail}
                   <br />
                   {index !== activity.details.length - 1 && <br />}
