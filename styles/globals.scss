@@ -1,0 +1,102 @@
+@import "config";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $home-image;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+a {
+  color: set-text-color($primary-color);
+  text-decoration: none;
+}
+
+.container {
+  padding: 4rem;
+  background-color: rgba(#444, 0.8);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+
+  &-track {
+    background: $primary-color;
+  }
+
+  &-thumb {
+    background: rgba($secondary-color, 0.5);
+    border-radius: 10px;
+
+    &:hover {
+      background: rgba($secondary-color, 0.75);
+    }
+
+    &:active {
+      background: rgba($secondary-color, 1);
+    }
+
+    &::window-inactive {
+      background: rgba($secondary-color, 0.2);
+    }
+  }
+
+  &:disabled {
+    background: transparent;
+  }
+}
+
+@include mediaMd {
+  .container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    &.lg-heading {
+      text-align: center;
+      line-height: 1.2;
+      font-size: 5rem;
+    }
+
+    &.sm-heading {
+      text-align: center;
+      margin-top: 2rem;
+    }
+  }
+}
