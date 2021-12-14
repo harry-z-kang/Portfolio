@@ -2,7 +2,7 @@ import { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
 import { server } from "../config";
-import aboutMeStyles from "../styles/AboutMe.module.scss";
+import aboutMeStyles from "../styles/aboutMe.module.scss";
 
 interface Activity {
   title: string;
