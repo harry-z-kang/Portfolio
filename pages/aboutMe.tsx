@@ -15,7 +15,7 @@ interface aboutMeProps {
 }
 
 export const getStaticProps: GetStaticProps<aboutMeProps> = async (
-  _
+  context
 ): Promise<GetStaticPropsResult<aboutMeProps>> => {
   const res = await fetch(`${server}/api/activities`);
   const activities = await res.json();

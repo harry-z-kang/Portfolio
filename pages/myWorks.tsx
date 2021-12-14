@@ -21,7 +21,7 @@ interface myWorksProps {
 }
 
 export const getStaticProps: GetStaticProps<myWorksProps> = async (
-  _
+  context
 ): Promise<GetStaticPropsResult<myWorksProps>> => {
   const res = await fetch(`${server}/api/projects`);
   const projects = await res.json();
