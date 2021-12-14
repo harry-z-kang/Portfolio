@@ -22,7 +22,7 @@ const Works: NextPage = () => {
         {projects.map((project, index) => (
           <div className={myWorksStyles.projects__item} key={index}>
             <a
-              href={project.github}
+              href={project?.website}
               className={myWorksStyles.projects__item__card}
             >
               <Image
@@ -38,7 +38,7 @@ const Works: NextPage = () => {
               </p>
             </a>
             <a
-              href={project?.website}
+              href={project.website}
               className={[myWorksStyles.btn, myWorksStyles["btn-light"]].join(
                 " "
               )}

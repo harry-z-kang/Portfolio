@@ -4,14 +4,14 @@
     "img": "project1.jpg",
     "description": "Portfolio for myself. You can fid all my contact details of me on this website including my resume. The main framework of this website is ReactJS with support from Font Awesome and Next.js for page routing and server-side rendering. It took me around 8 hours to completely finish it with a relatively high-quality code structure",
     "github": "https://github.com/Zkang0729/Portfolio",
-    "website": "https://zkang0729.github.io/Portfolio/"
+    "website": "https://harry-z-kang.herokuapp.com/"
   },
   {
     "name": "GTSR Peripheral board",
     "img": "project2.jpg",
     "description": "This is the peripheral board that cotrols the headlight, blinkers, brake light, hazard and the horn of the car. It feaetures a Tiva TM4C123GH6PM MCU. The output voltage (12V) is controlled by 3 load switches (TPS2HB16-Q1A) which provides 6 channels. Those load switches have open circuit detectionn, voltage reporting, etc. functionalities. The information will be gathered and sent to our telemetry server for further analysis and debugginng purpose.",
     "github": "https://github.gatech.edu/GTSR/board-peripheral",
-    "website": "./static/media/project2.ac6a5123.jpg"
+    "website": "./_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fproject2.00c6578f.jpg&w=1920&q=75"
   },
   {
     "name": "GTSR Tiva Library",
@@ -31,6 +31,7 @@
     "name": "GTSR Solar Cell Monitor",
     "img": "project5.jpg",
     "description": "In order to gain finner graulairty on the solar module data (module-based compared to zone-based), Isaac Weintraub and I are developing this board as part of the solar cell aanlysis system. This board features a DS18B20 One-Wire temperature sensor and 2 ADC ports for voltage and shadow monitoring. The collected data will be sent to a backend server writte in Go for cell ideality calculation which will trigger re-simulation accordingly.",
-    "website": "./static/media/project5.178400f5.jpg"
+    "github": "https://github.gatech.edu/GTSR/board-solar-cell-monitor",
+    "website": "./_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fproject5.c9fb6d7c.jpg&w=1920&q=75"
   }
 ]
