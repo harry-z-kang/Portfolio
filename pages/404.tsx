@@ -10,7 +10,7 @@ const PageNotFound = (): JSX.Element => {
       </Head>
       <code className={four04Styles.code}>
         A: Knock knock
-        <br /> B: Who's there?
+        <br /> B: Who&#39;s there?
         <br /> A: A local returned by reference
         <br /> B: reference to who?
         <br /> A: Segmentation fault

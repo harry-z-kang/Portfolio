@@ -18,7 +18,7 @@ const AboutMe: NextPage = () => {
         <div className={aboutMeStyles.about__bio}>
           <h3 className="text-secondary">BIO</h3>
           <p>
-            My name is Zixuan Kang, but most time people call me Harry. I'm a
+            My name is Zixuan Kang, but most time people call me Harry. I&#39;m a
             senior majoring in Computer Engineering concentrating in VLSI Design
             and Computer Architecture and minoring in Computer Science focusing
             on system & Architecture @ Georgia Institute of Techology.
