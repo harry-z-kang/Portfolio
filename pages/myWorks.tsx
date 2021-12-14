@@ -20,10 +20,14 @@ interface myWorksProps {
   projects: Project[];
 }
 
-export const getStaticProps: GetStaticProps<myWorksProps> = async (
-  context
-): Promise<GetStaticPropsResult<myWorksProps>> => {
-  const res = await fetch(`${server}/api/projects`);
+export const getStaticProps: GetStaticProps<myWorksProps> = async (): Promise<
+  GetStaticPropsResult<myWorksProps>
+> => {
+  const res = await fetch(`${server}/api/projects`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   const projects = await res.json();
 
   return {

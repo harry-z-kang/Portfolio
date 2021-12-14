@@ -14,10 +14,14 @@ interface aboutMeProps {
   activities: Activity[];
 }
 
-export const getStaticProps: GetStaticProps<aboutMeProps> = async (
-  context
-): Promise<GetStaticPropsResult<aboutMeProps>> => {
-  const res = await fetch(`${server}/api/activities`);
+export const getStaticProps: GetStaticProps<aboutMeProps> = async (): Promise<
+  GetStaticPropsResult<aboutMeProps>
+> => {
+  const res = await fetch(`${server}/api/activities`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   const activities = await res.json();
 
   return {
