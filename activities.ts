@@ -1,10 +1,12 @@
 export const activities = [
   {
     title: "GT Solar Racing",
-    description: "Auxiliary System Lead (Electrical Lead from January, 2022)",
+    description: "Electrical Lead",
     details: [
       "Reversed engineered a dongle terminator anddesigned a PCB board using TivaTM that integrates the Rudman BUS <=> UART <=> CAN BUS critical path instead of using the dongle terminator and an Arduino as the CAN Transceiver. Reduced the connection number on the critical path from 4 to 2 to improve the stability and save the team $200 for dongle terminator replacement.",
       "Designed an embedded system consists of a pair of PCB board that controls the peripheralof the solar car and wrote thefirmware code for TivaTMC Series Microcontroller used on the board, featuring an acknowledgment system that enables several GPIO board on the car at the same time to improve the modularization of different parts of the solar car.",
+      "Held weekly electrical meetings among all subteamleads to guaranteea smooth operation of the electrical team. The meeting usually includes status updateon both SR-3 and SR-4 and discussionof the general timeline of the current semester.",
+      "Designed, structured,and tested the infotainment system for SR-4. Itconsists of an Angular app as the front-endusingtechnologies such as RxJSand SCSSand a Go server that gets live data from the car through influxDB database.The infotainment system can potentiallybring an advantage of 3-4 points to the team during the race.",
     ],
   },
   {
