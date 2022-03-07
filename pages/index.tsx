@@ -7,9 +7,11 @@ const Home: NextPage = (): JSX.Element => {
   return (
     <div className="container">
       <Head>
+        <link rel="manifest" href="/manifest.json" />
         <title>Harry Kang | Home</title>
         <meta name="description" content="Harry Kang's Portfolio" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
       </Head>
 
       <h1 className={["lg-heading", homeStyles.home__heading].join(" ")}>
