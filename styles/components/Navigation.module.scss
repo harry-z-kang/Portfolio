@@ -22,19 +22,19 @@
       @include easeInOut();
     }
 
-    //Rotate Into X With Menu Lines
+    // Rotate Into X With Menu Lines
     &-close {
       transform: rotate(180deg);
       #{$this}__line {
-        //Line 1 - Rotate
+        // Line 1 - Rotate
         &:nth-child(1) {
           transform: rotate(45deg) translate(5px, 5px);
         }
-        //Line2 - Hide
+        // Line2 - Hide
         &:nth-child(2) {
           opacity: 0;
         }
-        //Line3 - Rotate
+        // Line3 - Rotate
         &:nth-child(3) {
           transform: rotate(-45deg) translate(7px, -6px);
         }
@@ -42,7 +42,7 @@
     }
   }
 
-  //Menu Overlay
+  // Menu Overlay
   &__menu {
     position: fixed;
     top: 0;
@@ -66,7 +66,7 @@
       overflow: hidden;
 
       &-show {
-        //Slide in from bottom
+        // Slide in from bottom
         transform: translate3d(0, 0, 0) !important;
       }
     }
@@ -100,7 +100,7 @@
         @include easeInOut();
 
         &-show {
-          //Slide in from right
+          // Slide in from right
           transform: translate3d(0, 0, 0);
         }
         &-current > &__link {
@@ -125,8 +125,8 @@
         }
       }
 
-      //Delay each nav item slide by 0.1s
-      @for $x from 1 through 4 {
+      // Delay each nav item slide by 0.1s
+      @for $x from 1 through 5 {
         &__item:nth-child(#{$x}) {
           transition-delay: $x * 100ms;
         }

@@ -20,17 +20,18 @@ interface myWorksProps {
   projects: Project[];
 }
 
-export const getServerSideProps: GetServerSideProps<myWorksProps> =
-  async (): Promise<GetServerSidePropsResult<myWorksProps>> => {
-    const res = await fetch(`${server}/api/projects`);
-    const projects = await res.json();
+export const getServerSideProps: GetServerSideProps<
+  myWorksProps
+> = async (): Promise<GetServerSidePropsResult<myWorksProps>> => {
+  const res = await fetch(`${server}/api/projects`);
+  const projects = await res.json();
 
-    return {
-      props: {
-        projects,
-      },
-    };
+  return {
+    props: {
+      projects,
+    },
   };
+};
 
 const Works: NextPage<myWorksProps> = ({ projects }): JSX.Element => {
   return (

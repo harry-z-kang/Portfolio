@@ -3,8 +3,8 @@ import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 import navigationStyles from "../styles/components/Navigation.module.scss";
 
-const titleName: string[] = ["", "aboutMe", "myWorks", "contactMe"];
-const navMenu: string[] = ["Home", "About Me", "My Works", "Contact Me"];
+const titleName: string[] = ["", "aboutMe", "myWorks", "contactMe", "myFavoriteLyrics"];
+const navMenu: string[] = ["Home", "About Me", "My Works", "Contact Me", "My Favorite Lyrics"];
 
 const Navigation: FC = (): JSX.Element => {
   const router: NextRouter = useRouter();
