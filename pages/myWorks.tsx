@@ -52,7 +52,7 @@ const Works: NextPage<myWorksProps> = ({ projects }): JSX.Element => {
             >
               <Image
                 className={myWorksStyles.projects__item__card__img}
-                src={require(`../public/assets/project/${project.img}`).default}
+                src={`/assets/project/${project.img}`}
                 alt={project.name}
                 width={3}
                 height={2}
