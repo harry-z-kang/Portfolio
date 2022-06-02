@@ -31,13 +31,13 @@ const Icons: FC<IconsProps> = ({
       <a href="https://twitter.com/harry_z_kang">
         <FontAwesomeIcon icon={faTwitter} size="2x" />
       </a>
-      <a href="https://www.facebook.com/zkang0729">
+      <a href="https://www.facebook.com/harryzkang">
         <FontAwesomeIcon icon={faFacebook} size="2x" />
       </a>
       <a href="https://www.linkedin.com/in/zixuan-kang-090220171/">
         <FontAwesomeIcon icon={faLinkedin} size="2x" />
       </a>
-      <a href="https://github.com/Zkang0729?tab=repositories">
+      <a href="https://github.com/harry-z-kang?tab=repositories">
         <FontAwesomeIcon icon={faGithub} size="2x" />
       </a>
       <a href="https://gtvault-my.sharepoint.com/:b:/g/personal/zkang35_gatech_edu/EW73vP4c_dZIpmLWzhaysaABn2ZblpziUpggfUwHAo-02A?e=Bm58Dn">
