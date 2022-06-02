@@ -5,7 +5,7 @@ export const projects = [
     description:
       "Portfolio for myself. You can fid all my contact details of me on this website including my resume. The main framework of this website is ReactJS with support from Font Awesome and Next.js for page routing and server-side rendering. It took me around 8 hours to completely finish it with a relatively high-quality code structure",
     github: "https://github.com/Zkang0729/Portfolio",
-    website: "https://harry-z-kang.herokuapp.com/",
+    website: "https://portfolio-harry-z-kang.vercel.app/",
   },
   {
     name: "GTSR Peripheral board",
