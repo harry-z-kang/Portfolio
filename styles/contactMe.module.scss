@@ -19,11 +19,17 @@
     text-align: center;
     @include easeInOut();
 
+	span {
+		@include easeInOut();
+	}
+
     &:hover {
       background-color: $secondary-color;
       color: set-text-color($secondary-color);
-      span {
+      
+	  span {
         color: set-text-color($secondary-color);
+		@include easeInOut();
       }
     }
 

@@ -40,7 +40,7 @@ const Contact: NextPage = (): JSX.Element => {
           >
             Address:{" "}
           </span>
-          333738 Georgia Tech Station, Atlanta, GA 30332
+          200 W Monroe St., Phoenix, AZ, 85003-1763
         </div>
       </div>
     </div>
