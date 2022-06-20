@@ -34,7 +34,7 @@ const Contact: NextPage = (): JSX.Element => {
             className="text-secondary"
             onClick={() =>
               navigator.clipboard.writeText(
-                "333738 Georgia Tech Station, Atlanta, GA 30332"
+                "3200 W Monroe St., Phoenix, AZ, 85003-1763"
               )
             }
           >
