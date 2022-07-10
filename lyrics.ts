@@ -23,5 +23,15 @@ export const lyrics = [
     title: "Blank Space",
     artist: "Taylor Swift",
     lines: ["'Cause, darling, I'm a nightmare dressed like a daydream"],
+  },
+  {
+	title: "Supermarket Flowers",
+	artist: "Ed Sheeran",
+	lines: [
+	  "Dad always told me, \"Don't you cry when you're down\"",
+	  "But mum, there's a tear every time that I blink",
+	  "Oh I'm in pieces, it's tearing me up, but I know",
+	  "A heart that's broke is a heart that's been loved"
+	],
   }
 ];
