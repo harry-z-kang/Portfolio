@@ -103,6 +103,7 @@
           // Slide in from right
           transform: translate3d(0, 0, 0);
         }
+
         &-current > &__link {
           color: $secondary-color;
         }

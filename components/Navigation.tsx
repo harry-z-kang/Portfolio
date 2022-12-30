@@ -3,8 +3,20 @@ import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
 import navigationStyles from "../styles/components/Navigation.module.scss";
 
-const titleName: string[] = ["", "aboutMe", "myWorks", "contactMe", "myFavoriteLyrics"];
-const navMenu: string[] = ["Home", "About Me", "My Works", "Contact Me", "My Favorite Lyrics"];
+const titleName: string[] = [
+  "",
+  "aboutMe",
+  "myWorks",
+  "contactMe",
+  "myFavoriteLyrics",
+];
+const navMenu: string[] = [
+  "Home",
+  "About Me",
+  "My Works",
+  "Contact Me",
+  "My Favorite Lyrics",
+];
 
 const Navigation: FC = (): JSX.Element => {
   const router: NextRouter = useRouter();
@@ -64,10 +76,8 @@ const Navigation: FC = (): JSX.Element => {
               }}
               key={index}
             >
-              <Link href={`/${titleName[index]}`}>
-                <a className={navigationStyles.nav__menu__list__item__link}>
-                  {navTitle}
-                </a>
+              <Link href={`/${titleName[index]}`} className={navigationStyles.nav__menu__list__item__link}>
+                {navTitle}
               </Link>
             </li>
           ))}
