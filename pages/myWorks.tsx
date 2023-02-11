@@ -54,9 +54,7 @@ const Works: NextPage<myWorksProps> = ({ projects }): JSX.Element => {
                 className={myWorksStyles.projects__item__card__img}
                 src={`/assets/project/${project.img}`}
                 alt={project.name}
-                width={3}
-                height={2}
-                layout="responsive"
+                fill={true}
               />
               <p className={myWorksStyles.projects__item__card__desc}>
                 {project.description}

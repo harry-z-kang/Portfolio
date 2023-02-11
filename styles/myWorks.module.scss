@@ -6,14 +6,18 @@
   gap: 0.7rem;
 
   &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    aspect-ratio: 4 / 3.5;
+
     &__card {
       cursor: pointer;
       display: block;
       position: relative;
+      flex-grow: 1;
 
       &__img {
-        width: 100%;
-        aspect-ratio: 1.5;
         border: 3px #fff solid;
         @include easeInOut();
       }
@@ -51,7 +55,7 @@
   }
 }
 
-//Button Styles
+// Button Styles
 .btn {
   display: block;
   padding: 0.5rem 1rem;
