@@ -41,4 +41,11 @@ export const projects = [
     website:
       "./_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fproject5.c9fb6d7c.jpg&w=1920&q=75",
   },
+  {
+    name: "Cortex-M85",
+    img: "project6.jpg",
+    description: "This is the first project I have worked on with ARM both as an intern and as a full-time employee. During my internship, I worked on the DCA feature testbench using SystemVerilog and UVM. As a full-time employee, I worked on the System Verification on Operating System (SVOS), focusing on flow improvement and performance bug hunting. I also worked with the formal team on evaluating Security Path Verification (SPV) which is an extension on the Cadance JasperGold Formal Tool.",
+    github: "https://www.arm.com/products/silicon-ip-cpu/cortex-m/cortex-m85",
+    website: "https://www.arm.com/products/silicon-ip-cpu/cortex-m/cortex-m85",
+  },
 ];
