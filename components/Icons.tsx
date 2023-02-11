@@ -28,19 +28,19 @@ const Icons: FC<IconsProps> = ({
         " "
       )}
     >
-      <a href="https://twitter.com/harry_z_kang">
+      <a href="https://twitter.com/harry_z_kang" target="_blank">
         <FontAwesomeIcon icon={faTwitter} size="2x" />
       </a>
-      <a href="https://www.facebook.com/harryzkang">
+      <a href="https://www.facebook.com/harryzkang" target="_blank">
         <FontAwesomeIcon icon={faFacebook} size="2x" />
       </a>
-      <a href="https://www.linkedin.com/in/zixuan-kang-090220171/">
+      <a href="https://www.linkedin.com/in/zixuan-kang-090220171/" target="_blank">
         <FontAwesomeIcon icon={faLinkedin} size="2x" />
       </a>
-      <a href="https://github.com/harry-z-kang?tab=repositories">
+      <a href="https://github.com/harry-z-kang?tab=repositories" target="_blank">
         <FontAwesomeIcon icon={faGithub} size="2x" />
       </a>
-      <a href="https://gtvault-my.sharepoint.com/:b:/g/personal/zkang35_gatech_edu/EW73vP4c_dZIpmLWzhaysaABn2ZblpziUpggfUwHAo-02A?e=Bm58Dn">
+      <a href="https://1drv.ms/b/s!AltiROOwfMyzneguKUdaXBHB1tC2AQ?e=QJt4hD" target="_blank">
         <FontAwesomeIcon icon={faFile} size="2x" />
       </a>
     </div>
