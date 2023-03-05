@@ -10,26 +10,40 @@
   gap: 10%;
   margin-top: 5rem;
 
-  div {
+  &__box {
     cursor: pointer;
     font-size: 2rem;
     border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     text-align: center;
+    position: relative;
     @include easeInOut();
 
-	span {
-		@include easeInOut();
-	}
-
+    &__clip {
+      position: absolute;
+      right: 0.5rem;
+      bottom: 0.5rem;
+      opacity: 0;
+      @include easeInOut();
+    }
+    
+    span {
+      @include easeInOut();
+    }
+    
     &:hover {
       background-color: $secondary-color;
       color: set-text-color($secondary-color);
       
-	  span {
+      .boxes__box__clip {
+        opacity: 1;
+        @include easeInOut();
+      }
+
+      span {
         color: set-text-color($secondary-color);
-		@include easeInOut();
+        @include easeInOut();
       }
     }
 
@@ -55,7 +69,7 @@
     align-items: center;
     margin-top: 3rem;
 
-    div {
+    &__box {
       font-size: 14px;
     }
   }
