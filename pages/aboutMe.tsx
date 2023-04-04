@@ -44,11 +44,11 @@ const AboutMe: NextPage<aboutMeProps> = ({ activities }): JSX.Element => {
         <div className={aboutMeStyles.about__bio}>
           <h3 className="text-secondary">BIO</h3>
           <p>
-            My name is Zixuan Kang, but most time people call me Harry. I just
-            graduated majoring in Computer Engineering concentrating in VLSI
-            Design and Computer Architecture and minoring in Computer Science
-            focusing on system & Architecture from Georgia Institute of
-            Techology. I&#39;m now working full-time with Arm Inc. as a
+            My name is Zixuan Kang, but most time people call me Harry. I
+            graduated from Georgia Institute of Techology in May, 2022 majoring
+            in Computer Engineering concentrating in VLSI Design and Computer
+            Architecture and minoring in Computer Science focusing on system &
+            Architecture. I&#39;m now working full-time with Arm Inc. as a
             verification engineer.
           </p>
         </div>
