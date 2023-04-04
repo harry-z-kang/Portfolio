@@ -1,0 +1,99 @@
+@import "config";
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    aspect-ratio: 4 / 3.5;
+
+    &__card {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      flex-grow: 1;
+
+      &__img {
+        border: 3px #fff solid;
+        @include easeInOut();
+      }
+
+      &__desc {
+        position: absolute;
+        padding: 1.5rem !important;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem;
+        color: #fff;
+        letter-spacing: 0.1rem;
+        text-align: justify;
+        @include easeInOut();
+      }
+    }
+
+    &:hover {
+      a {
+        img {
+          opacity: 0.3;
+          border-color: $secondary-color;
+          @include easeInOut();
+        }
+
+        p {
+          opacity: 1;
+          @include easeInOut();
+        }
+      }
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+    @include easeInOut();
+  }
+
+  &-dark {
+    background: darken($primary-color, 50);
+    color: #fff;
+  }
+
+  &-light {
+    background: lighten($primary-color, 50);
+    color: #333;
+  }
+}
+
+@include mediaLg {
+  .projects {
+    &__item {
+      &__card {
+        &__desc {
+          overflow-y: auto;
+          padding: 0 1.5rem 0 1.5rem !important;
+        }
+      }
+    }
+  }
+}
+
+@include mediaMd {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}

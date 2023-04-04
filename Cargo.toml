@@ -1,0 +1,15 @@
+[package]
+name = "portfolio_yew"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+yew = { version = "0.20.0", features = ["csr"] }
+yew-router = "0.17"
+yew_icons = { version = "0.7", features = [
+  "SimpleIconsTwitter",
+  "SimpleIconsFacebook",
+  "SimpleIconsLinkedin",
+  "SimpleIconsGithub",
+  "BootstrapFileEarmarkPdf"
+] }

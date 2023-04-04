@@ -1,0 +1,76 @@
+@import "config";
+
+.boxes {
+  display: grid;
+  grid-template-areas:
+    "email phone"
+    "address address";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10%;
+  margin-top: 5rem;
+
+  &__box {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    @include easeInOut();
+
+    &__clip {
+      position: absolute;
+      right: 0.5rem;
+      bottom: 0.5rem;
+      opacity: 0;
+      @include easeInOut();
+    }
+    
+    span {
+      @include easeInOut();
+    }
+    
+    &:hover {
+      background-color: $secondary-color;
+      color: set-text-color($secondary-color);
+      
+      .boxes__box__clip {
+        opacity: 1;
+        @include easeInOut();
+      }
+
+      span {
+        color: set-text-color($secondary-color);
+        @include easeInOut();
+      }
+    }
+
+    &:nth-child(1) {
+      grid-area: email;
+    }
+
+    &:nth-child(2) {
+      grid-area: phone;
+    }
+
+    &:nth-child(3) {
+      grid-area: address;
+    }
+  }
+}
+
+@include mediaMd {
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3rem;
+
+    &__box {
+      font-size: 14px;
+    }
+  }
+}
