@@ -444,6 +444,12 @@ dependencies = [
 name = "portfolio_yew"
 version = "0.1.0"
 dependencies = [
+ "gloo",
+ "gloo-file",
+ "serde",
+ "serde_json",
+ "wasm-bindgen-futures",
+ "web-sys",
  "yew",
  "yew-router",
  "yew_icons",

@@ -81,7 +81,7 @@
       &__portrait {
         width: 250px;
         height: 250px;
-        background: url(../assets/portrait.jpg);
+        background: url(../../static/assets/portrait.jpg);
         border-radius: 50%;
         border: solid 3px $secondary-color;
       }
@@ -159,7 +159,7 @@
     transform: translate3d(100%, 0, 0);
 
     &__portrait {
-      background: url(../assets/portrait_small.jpg);
+      background: url(../../static/assets/portrait_small.jpg);
       width: 150px;
       height: 150px;
     }

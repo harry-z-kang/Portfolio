@@ -1,5 +1,5 @@
-use yew::{classes, function_component, html, use_state, Callback, Html, Properties};
-use yew_router::prelude::{use_route, Link};
+use yew::prelude::*;
+use yew_router::prelude::*;
 
 use crate::route::Route;
 
@@ -28,58 +28,56 @@ pub fn navigation(_: &NavigationProps) -> Html {
     };
 
     html! {
-    <div class="nav">
-      <div
-        class={classes!(
-          "nav__menuBtn",
-          format!("nav__menuBtn{}", if *show_menu  {"-close"} else {""}),
-        )}
-        onclick={toggle_show_menu.clone()}
-      >
-        <div class="nav__menuBtn__line"></div>
-        <div class="nav__menuBtn__line"></div>
-        <div class="nav__menuBtn__line"></div>
-      </div>
-      <div
-        class={classes!(
-          "nav__menu",
-          format!("nav__menu{}", if *show_menu {"-show"} else {""})
-        )}
-      >
+      <div class="nav">
         <div
           class={classes!(
-            "nav__menu__branding",
-            format!("nav__menu__branding{}", if *show_menu {"-show"} else {""})
+            "nav__menuBtn",
+            format!("nav__menuBtn{}", if *show_menu  {"-close"} else {""}),
           )}
+          onclick={toggle_show_menu.clone()}
         >
-          <div class="nav__menu__branding__portrait"></div>
+          <div class="nav__menuBtn__line"></div>
+          <div class="nav__menuBtn__line"></div>
+          <div class="nav__menuBtn__line"></div>
         </div>
-        <ul
+        <div
           class={classes!(
-            "nav__menu__list",
-            format!("nav__menu__list{}", if *show_menu {"-show"} else {""})
+            "nav__menu",
+            format!("nav__menu{}", if *show_menu {"-show"} else {""})
           )}
         >
-          {TITLE_NAME.into_iter().map(|nav_title| {
-            html! {
-            <li
-              class={classes!(
-                "nav__menu__list__item",
-                format!("nav__menu__list__item{}", if *show_menu {"-show"} else {""}),
-                if nav_title == router_location
-                  {"nav__menu__list__item-current"}
-                  else {""}
-              )}
-              onclick={close_show_menu.clone()}
-            >
-              <Link<Route> to={nav_title} classes="nav__menu__list__item__link">
-                {nav_title.to_string()}
-              </Link<Route>>
-            </li>
-            }
-          }).collect::<Html>()}
-        </ul>
+          <div
+            class={classes!(
+              "nav__menu__branding",
+              format!("nav__menu__branding{}", if *show_menu {"-show"} else {""})
+            )}
+          >
+            <div class="nav__menu__branding__portrait"></div>
+          </div>
+          <ul
+            class={classes!(
+              "nav__menu__list",
+              format!("nav__menu__list{}", if *show_menu {"-show"} else {""})
+            )}
+          >
+            {TITLE_NAME.into_iter().map(|nav_title| {
+              html! {
+                <li
+                  class={classes!(
+                    "nav__menu__list__item",
+                    format!("nav__menu__list__item{}", if *show_menu {"-show"} else {""}),
+                    if nav_title == router_location {"nav__menu__list__item-current"} else {""}
+                  )}
+                  onclick={close_show_menu.clone()}
+                >
+                  <Link<Route> to={nav_title} classes="nav__menu__list__item__link">
+                    {nav_title.to_string()}
+                  </Link<Route>>
+                </li>
+              }
+            }).collect::<Html>()}
+          </ul>
+        </div>
       </div>
-    </div>
     }
 }

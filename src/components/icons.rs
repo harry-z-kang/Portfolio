@@ -1,6 +1,6 @@
 use core::fmt;
 
-use yew::{classes, function_component, html, Html, Properties};
+use yew::prelude::*;
 use yew_icons::{Icon, IconId};
 
 #[derive(PartialEq)]

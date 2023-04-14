@@ -4,6 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+gloo = "0.8.0"
+gloo-file = "0.2.3"
+serde = "1.0.159"
+serde_json = "1.0.95"
+web-sys = { version = "0.3.61", features = ["Navigator", "Clipboard"] }
+wasm-bindgen-futures = "0.4.34"
 yew = { version = "0.20.0", features = ["csr"] }
 yew-router = "0.17"
 yew_icons = { version = "0.7", features = [
@@ -11,5 +17,8 @@ yew_icons = { version = "0.7", features = [
   "SimpleIconsFacebook",
   "SimpleIconsLinkedin",
   "SimpleIconsGithub",
-  "BootstrapFileEarmarkPdf"
+  "BootstrapEyeFill",
+  "BootstrapFileEarmarkPdf",
+  "BootstrapClipboardFill",
+  "BootstrapClipboardCheckFill"
 ] }

@@ -1,7 +1,7 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
 $danger-color: #ff0000;
-$home-image: url(assets/background.jpeg);
+$home-image: url(../static/assets/background.jpeg);
 $background-opacity: 0.9;
 
 @mixin easeInOut {

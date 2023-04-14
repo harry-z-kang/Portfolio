@@ -1,4 +1,4 @@
-use yew::{classes, function_component, html, Html, Properties};
+use yew::prelude::*;
 
 use crate::components::icons::{IconAlignment, Icons};
 
@@ -25,15 +25,15 @@ pub fn header(props: &HeaderProps) -> Html {
         .join(" ");
 
     html! {
-      <div class={classes!("landing")}>
-        <div class={classes!("landing__heading")}>
-          <h1 class={classes!("lg-heading")}>
+      <div class="landing">
+        <div class="landing__heading">
+          <h1 class="lg-heading">
             {uncolored_heading}
             <span class="text-secondary">
               {colored_heading}
             </span>
           </h1>
-          <h2 class={classes!("sm-heading")}>{small_heading}</h2>
+          <h2 class="sm-heading">{small_heading}</h2>
         </div>
         <Icons alignment={IconAlignment::Center} />
       </div>
