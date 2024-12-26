@@ -4,8 +4,8 @@ use yew::prelude::*;
 #[derive(PartialEq, Properties)]
 pub struct PageNotFoundProps {}
 
-#[function_component(PageNotFound)]
-pub fn page_not_found(_: &PageNotFoundProps) -> Html {
+#[function_component]
+pub fn PageNotFound(_: &PageNotFoundProps) -> Html {
     use_effect(move || {
         document().set_title("Uhhh Ohhh...");
     });

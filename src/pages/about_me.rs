@@ -14,8 +14,8 @@ pub struct Activity {
 #[derive(PartialEq, Properties)]
 pub struct AboutMeProps {}
 
-#[function_component(AboutMe)]
-pub fn about_me(_: &AboutMeProps) -> Html {
+#[function_component]
+pub fn AboutMe(_: &AboutMeProps) -> Html {
     let file = include_str!("../../static/db/activities.json");
     let activities: Vec<Activity> = serde_json::from_str(&file).unwrap();
 

@@ -6,8 +6,8 @@ use crate::components::icons::{IconAlignment, Icons};
 #[derive(PartialEq, Properties)]
 pub struct HomeProps {}
 
-#[function_component(Home)]
-pub fn home(_: &HomeProps) -> Html {
+#[function_component]
+pub fn Home(_: &HomeProps) -> Html {
     use_effect(move || {
         document().set_title("Harry Kang | Home");
     });

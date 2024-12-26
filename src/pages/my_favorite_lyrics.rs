@@ -14,8 +14,8 @@ pub struct Lyric {
 #[derive(PartialEq, Properties)]
 pub struct MyFavoriteLyricsProps {}
 
-#[function_component(MyFavoriteLyrics)]
-pub fn my_favorite_lyrics(_: &MyFavoriteLyricsProps) -> Html {
+#[function_component]
+pub fn MyFavoriteLyrics(_: &MyFavoriteLyricsProps) -> Html {
     let file = include_str!("../../static/db/lyrics.json");
     let lyrics: Vec<Lyric> = serde_json::from_str(&file).unwrap();
 
