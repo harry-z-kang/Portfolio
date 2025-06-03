@@ -1,4 +1,4 @@
-@import "../config";
+@use "../config";
 
 .icons {
   margin-top: 1rem;
@@ -10,8 +10,8 @@
     padding: 1rem;
 
     &:hover {
-      @include easeInOut();
-      color: $secondary-color;
+      @include config.easeInOut();
+      color: config.$secondary-color;
     }
   }
 
@@ -28,7 +28,7 @@
   }
 }
 
-@include mediaMd {
+@include config.mediaMd {
   .icons {
     margin-top: 0.5rem;
     margin-bottom: 1rem;

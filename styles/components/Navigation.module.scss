@@ -1,4 +1,5 @@
-@import "../config";
+@use "sass:color";
+@use "../config";
 
 .nav {
   position: fixed;
@@ -11,15 +12,15 @@
     right: 35px;
     top: 35px;
     cursor: pointer;
-    @include easeInOut();
+    @include config.easeInOut();
 
     $this: &;
     &__line {
       width: 28px;
       height: 3px;
       margin: 0 0 5px 0;
-      background: set-text-color($primary-color);
-      @include easeInOut();
+      background: config.set-text-color(config.$primary-color);
+      @include config.easeInOut();
     }
 
     // Rotate Into X With Menu Lines
@@ -74,30 +75,30 @@
     &__branding {
       align-items: center;
       justify-content: center;
-      background: $primary-color;
+      background: config.$primary-color;
       transform: translate3d(0, 100%, 0);
-      @include easeInOut();
+      @include config.easeInOut();
 
       &__portrait {
         width: 250px;
         height: 250px;
         background: url(../../public/assets/portrait.jpg);
         border-radius: 50%;
-        border: solid 3px $secondary-color;
+        border: solid 3px config.$secondary-color;
       }
     }
 
     &__list {
       margin: 0;
       padding: 0;
-      background: darken($primary-color, 5);
+      background: color.adjust(config.$primary-color, $lightness: -5%);
       list-style: none;
       transform: translate3d(0, -100%, 0);
-      @include easeInOut();
+      @include config.easeInOut();
 
       &__item {
         transform: translate3d(600px, 0, 0);
-        @include easeInOut();
+        @include config.easeInOut();
 
         &-show {
           // Slide in from right
@@ -105,7 +106,7 @@
         }
 
         &-current > &__link {
-          color: $secondary-color;
+          color: config.$secondary-color;
         }
 
         &__link {
@@ -116,12 +117,12 @@
           text-transform: uppercase;
           padding: 1rem, 0;
           font-weight: 300;
-          color: set-text-color($primary-color);
+          color: config.set-text-color(config.$primary-color);
           text-decoration: none;
-          @include easeInOut();
+          @include config.easeInOut();
 
           &:hover {
-            color: $secondary-color;
+            color: config.$secondary-color;
           }
         }
       }
@@ -136,7 +137,7 @@
   }
 }
 
-@include mediaMd {
+@include config.mediaMd {
   .nav__menu__branding,
   .nav__menu__list {
     float: none;
