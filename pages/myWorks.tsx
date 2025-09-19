@@ -33,7 +33,7 @@ export const getServerSideProps: GetServerSideProps<
   };
 };
 
-const Works: NextPage<myWorksProps> = ({ projects }): JSX.Element => {
+const Works: NextPage<myWorksProps> = ({ projects }): React.ReactElement => {
   return (
     <div className="container">
       <Head>

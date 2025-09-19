@@ -2,7 +2,7 @@ import Head from "next/head";
 import times from "lodash/times";
 import four04Styles from "../styles/404.module.scss";
 
-const PageNotFound = (): JSX.Element => {
+const PageNotFound = (): React.ReactElement => {
   return (
     <div className={four04Styles.matrix}>
       <Head>

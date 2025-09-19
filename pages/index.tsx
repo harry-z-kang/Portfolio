@@ -3,7 +3,7 @@ import Head from "next/head";
 import Icons, { IconAlignment } from "../components/Icons";
 import homeStyles from "../styles/home.module.scss";
 
-const Home: NextPage = (): JSX.Element => {
+const Home: NextPage = (): React.ReactElement => {
   return (
     <div className="container">
       <Head>

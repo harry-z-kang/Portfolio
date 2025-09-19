@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps<
   };
 };
 
-const AboutMe: NextPage<aboutMeProps> = ({ activities }): JSX.Element => {
+const AboutMe: NextPage<aboutMeProps> = ({ activities }): React.ReactElement => {
   return (
     <div className="container">
       <Head>

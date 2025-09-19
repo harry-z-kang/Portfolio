@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps<
 
 const MyFavoriteLyrics: NextPage<myFavoriteLyricsProps> = ({
   lyrics,
-}): JSX.Element => {
+}): React.ReactElement => {
   return (
     <div className="container">
       <Head>

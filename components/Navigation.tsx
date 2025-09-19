@@ -18,7 +18,7 @@ const navMenu: string[] = [
   "My Favorite Lyrics",
 ];
 
-const Navigation: FC = (): JSX.Element => {
+const Navigation: FC = (): React.ReactElement => {
   const router: NextRouter = useRouter();
 
   const [showMenu, setShowMenu] = useState<boolean>(false);

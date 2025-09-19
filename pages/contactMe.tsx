@@ -6,7 +6,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import contactMeStyles from "../styles/contactMe.module.scss";
 
-const Contact: NextPage = (): JSX.Element => {
+const Contact: NextPage = (): React.ReactElement => {
   const [phoneNumberCopied, setPhoneNumberCopied] = useState<Boolean>(false);
   const [addressCopied, setAddressCopied] = useState<Boolean>(false);
 

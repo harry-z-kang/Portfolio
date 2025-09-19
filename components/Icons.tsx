@@ -21,7 +21,7 @@ interface IconsProps {
 
 const Icons: FC<IconsProps> = ({
   alignment = IconAlignment.Start,
-}): JSX.Element => {
+}): React.ReactElement => {
   return (
     <div
       className={[iconsStyles.icons, iconsStyles[`icons-${alignment}`]].join(

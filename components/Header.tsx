@@ -10,7 +10,7 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({
   largeHeading,
   smallHeading,
-}): JSX.Element => {
+}): React.ReactElement => {
   return (
     <div className={headerStyles.landing}>
       <div className={headerStyles.landing__heading}>
