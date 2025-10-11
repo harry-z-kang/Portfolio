@@ -22,8 +22,8 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.17.20",
-    "@types/node": "^24.5.2",
-    "@types/react": "^19.1.13",
+    "@types/node": "^24.7.2",
+    "@types/react": "^19.2.2",
     "@types/react-fontawesome": "^1.6.8",
     "eslint": "^9.36.0",
     "eslint-config-next": "^15.5.3"
