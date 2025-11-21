@@ -1,0 +1,3 @@
+[tools]
+wasm_bindgen = "0.2.104"
+
