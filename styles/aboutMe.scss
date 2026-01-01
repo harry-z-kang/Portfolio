@@ -1,4 +1,5 @@
-@import "config";
+@use "sass:color";
+@use "config";
 
 .about {
   display: grid;
@@ -15,7 +16,7 @@
     height: 250px;
     width: 250px;
     border-radius: 50%;
-    border: $secondary-color 3px solid;
+    border: config.$secondary-color 3px solid;
   }
 
   &__bio {
@@ -24,9 +25,9 @@
   }
 
   &__job {
-    background: lighten($primary-color, 5);
+    background: color.adjust(config.$primary-color, $lightness: 5%);
     padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
+    border-bottom: config.$secondary-color 5px solid;
   }
 
   @for $x from 1 through 3 {
@@ -36,7 +37,7 @@
   }
 }
 
-@include mediaMd {
+@include config.mediaMd {
   .about {
     grid-template-areas:
       "bioimage"

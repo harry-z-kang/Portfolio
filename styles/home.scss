@@ -1,4 +1,4 @@
-@import "config";
+@use "config";
 
 .home {
   &__heading {
@@ -6,7 +6,7 @@
   }
 }
 
-@include mediaMd {
+@include config.mediaMd {
   .home__heading {
     margin-top: 10vh;
   }

@@ -1,4 +1,5 @@
-@import "config";
+@use "sass:color";
+@use "config";
 
 * {
   margin: 0;
@@ -7,11 +8,11 @@
 }
 
 body {
-  background: $home-image;
+  background: config.$home-image;
   background-attachment: fixed;
   background-size: cover;
-  background-color: $primary-color;
-  color: set-text-color($primary-color);
+  background-color: config.$primary-color;
+  color: config.set-text-color(config.$primary-color);
   height: 100vh;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -19,11 +20,11 @@ body {
 }
 
 .text-secondary {
-  color: $secondary-color;
+  color: config.$secondary-color;
 }
 
 a {
-  color: set-text-color($primary-color);
+  color: config.set-text-color(config.$primary-color);
   text-decoration: none;
 }
 
@@ -46,7 +47,7 @@ h3 {
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    background: color.change(config.$primary-color, $lightness: 20%, $alpha: 0.5, $space: hsl);
   }
 }
 
@@ -54,23 +55,23 @@ h3 {
   width: 10px;
 
   &-track {
-    background: $primary-color;
+    background: config.$primary-color;
   }
 
   &-thumb {
-    background: rgba($secondary-color, 0.5);
+    background: rgba(config.$secondary-color, 0.5);
     border-radius: 10px;
 
     &:hover {
-      background: rgba($secondary-color, 0.75);
+      background: rgba(config.$secondary-color, 0.75);
     }
 
     &:active {
-      background: rgba($secondary-color, 1);
+      background: rgba(config.$secondary-color, 1);
     }
 
     &::window-inactive {
-      background: rgba($secondary-color, 0.2);
+      background: rgba(config.$secondary-color, 0.2);
     }
   }
 
@@ -79,7 +80,7 @@ h3 {
   }
 }
 
-@include mediaMd {
+@include config.mediaMd {
   .container {
     width: 100%;
     padding: 2rem;

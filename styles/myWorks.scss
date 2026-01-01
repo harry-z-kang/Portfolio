@@ -1,4 +1,5 @@
-@import "config";
+@use "sass:color";
+@use "config";
 
 .projects {
   display: grid;
@@ -21,7 +22,7 @@
         width: 100%;
         aspect-ratio: 3/2;
         border: 3px #fff solid;
-        @include easeInOut();
+        @include config.easeInOut();
       }
 
       &__desc {
@@ -36,7 +37,7 @@
         color: #fff;
         letter-spacing: 0.1rem;
         text-align: justify;
-        @include easeInOut();
+        @include config.easeInOut();
       }
     }
 
@@ -44,13 +45,13 @@
       a {
         img {
           opacity: 0.3;
-          border-color: $secondary-color;
-          @include easeInOut();
+          border-color: config.$secondary-color;
+          @include config.easeInOut();
         }
 
         p {
           opacity: 1;
-          @include easeInOut();
+          @include config.easeInOut();
         }
       }
     }
@@ -70,23 +71,23 @@
   }
 
   &:hover {
-    background: $secondary-color;
-    color: set-text-color($secondary-color);
-    @include easeInOut();
+    background: config.$secondary-color;
+    color: config.set-text-color(config.$secondary-color);
+    @include config.easeInOut();
   }
 
   &-dark {
-    background: darken($primary-color, 50);
+    background: color.adjust(config.$primary-color, $lightness: -50%);
     color: #fff;
   }
 
   &-light {
-    background: lighten($primary-color, 50);
+    background: color.adjust(config.$primary-color, $lightness: 50%);
     color: #333;
   }
 }
 
-@include mediaLg {
+@include config.mediaLg {
   .projects {
     &__item {
       &__card {
@@ -99,7 +100,7 @@
   }
 }
 
-@include mediaMd {
+@include config.mediaMd {
   .projects {
     grid-template-columns: 1fr;
   }

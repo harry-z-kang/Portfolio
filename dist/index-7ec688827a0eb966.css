@@ -47,7 +47,7 @@ h2.sm-heading,
 h3.sm-heading {
   margin-bottom: 2rem;
   padding: 0.2rem 1rem;
-  background: rgba(73, 73, 73, 0.5);
+  background: rgba(51, 51, 51, 0.5);
 }
 
 ::-webkit-scrollbar {
@@ -124,7 +124,7 @@ h3.sm-heading {
   font-size: 1.5rem;
 }
 .about__job {
-  background: #515151;
+  background: rgb(80.75, 80.75, 80.75);
   padding: 0.5rem;
   border-bottom: #eece1a 5px solid;
 }
@@ -207,11 +207,11 @@ h3.sm-heading {
   transition: all 500ms ease-in-out;
 }
 .btn-dark {
-  background: black;
+  background: hsl(0, 0%, -23.3333333333%);
   color: #fff;
 }
 .btn-light {
-  background: #c4c4c4;
+  background: rgb(195.5, 195.5, 195.5);
   color: #333;
 }
 
@@ -555,7 +555,7 @@ h3.sm-heading {
 .nav__menu__list {
   margin: 0;
   padding: 0;
-  background: #373737;
+  background: rgb(55.25, 55.25, 55.25);
   list-style: none;
   transform: translate3d(0, -100%, 0);
   transition: all 500ms ease-in-out;

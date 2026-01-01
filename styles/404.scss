@@ -1,4 +1,4 @@
-@import "config";
+@use "config";
 
 .matrix {
   position: absolute;
@@ -22,7 +22,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 3rem;
-  background-color: rgba($primary-color, 0.5);
+  background-color: rgba(config.$primary-color, 0.5);
   text-align: center;
   z-index: -1;
 }
@@ -64,7 +64,7 @@
 .cell-6-10,
 .cell-7-10,
 .cell-8-10 {
-  background-color: $secondary-color;
+  background-color: config.$secondary-color;
 }
 
 .cell-6-0,
@@ -111,7 +111,7 @@
   background-color: rgba(#ccc, 0.3);
 }
 
-@include mediaMd {
+@include config.mediaMd {
   .code {
     font-size: 1rem;
   }

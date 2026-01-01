@@ -1,4 +1,4 @@
-@import "../config";
+@use "../config";
 
 .landing {
   display: grid;
@@ -10,7 +10,7 @@
   }
 }
 
-@include mediaMd {
+@include config.mediaMd {
   .landing {
     grid-template-areas:
       "texts"
