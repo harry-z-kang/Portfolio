@@ -42,6 +42,10 @@ function __wbg_get_imports() {
             const ret = arg0 === undefined;
             return ret;
         },
+        __wbg___wbindgen_jsval_eq_11888390b0186270: function(arg0, arg1) {
+            const ret = arg0 === arg1;
+            return ret;
+        },
         __wbg___wbindgen_jsval_loose_eq_9dd77d8cd6671811: function(arg0, arg1) {
             const ret = arg0 == arg1;
             return ret;
@@ -81,7 +85,7 @@ function __wbg_get_imports() {
             const ret = arg0.bubbles;
             return ret;
         },
-        __wbg_cache_key_57601dac16343711: function(arg0) {
+        __wbg_cache_key_577df69a33f9a3fb: function(arg0) {
             const ret = arg0.__yew_subtree_cache_key;
             return isLikeNone(ret) ? 0x100000001 : (ret) >>> 0;
         },
@@ -289,7 +293,7 @@ function __wbg_get_imports() {
             const ret = arg0.length;
             return ret;
         },
-        __wbg_listener_id_ed1678830a5b97ec: function(arg0) {
+        __wbg_listener_id_e93527b90229a898: function(arg0) {
             const ret = arg0.__yew_listener_id;
             return isLikeNone(ret) ? 0x100000001 : (ret) >>> 0;
         },
@@ -411,6 +415,9 @@ function __wbg_get_imports() {
         __wbg_removeEventListener_0c0902ed5009dd9f: function() { return handleError(function (arg0, arg1, arg2, arg3, arg4) {
             arg0.removeEventListener(getStringFromWasm0(arg1, arg2), arg3, arg4 !== 0);
         }, arguments); },
+        __wbg_replaceState_aefa111958f68023: function() { return handleError(function (arg0, arg1, arg2, arg3, arg4, arg5) {
+            arg0.replaceState(arg1, getStringFromWasm0(arg2, arg3), arg4 === 0 ? undefined : getStringFromWasm0(arg4, arg5));
+        }, arguments); },
         __wbg_require_b74f47fc2d022fd6: function() { return handleError(function () {
             const ret = module.require;
             return ret;
@@ -447,7 +454,7 @@ function __wbg_get_imports() {
             const ret = Reflect.set(arg0, arg1, arg2);
             return ret;
         }, arguments); },
-        __wbg_set_cache_key_bb5f908a0e3ee714: function(arg0, arg1) {
+        __wbg_set_cache_key_07879d8e1ddc3687: function(arg0, arg1) {
             arg0.__yew_subtree_cache_key = arg1 >>> 0;
         },
         __wbg_set_capture_d52e7a585f2933c8: function(arg0, arg1) {
@@ -456,13 +463,16 @@ function __wbg_get_imports() {
         __wbg_set_checked_4b2468680005fbf7: function(arg0, arg1) {
             arg0.checked = arg1 !== 0;
         },
+        __wbg_set_defaultValue_ad528b0a65ceef4a: function() { return handleError(function (arg0, arg1, arg2) {
+            arg0.defaultValue = getStringFromWasm0(arg1, arg2);
+        }, arguments); },
         __wbg_set_hash_ef8eaa28bac5a100: function(arg0, arg1, arg2) {
             arg0.hash = getStringFromWasm0(arg1, arg2);
         },
         __wbg_set_innerHTML_edd39677e3460291: function(arg0, arg1, arg2) {
             arg0.innerHTML = getStringFromWasm0(arg1, arg2);
         },
-        __wbg_set_listener_id_3d14d37a42484593: function(arg0, arg1) {
+        __wbg_set_listener_id_673485d61ca64e47: function(arg0, arg1) {
             arg0.__yew_listener_id = arg1 >>> 0;
         },
         __wbg_set_nodeValue_d947eb0a476b80d7: function(arg0, arg1, arg2) {
@@ -477,7 +487,7 @@ function __wbg_get_imports() {
         __wbg_set_search_1d369b0f3868e132: function(arg0, arg1, arg2) {
             arg0.search = getStringFromWasm0(arg1, arg2);
         },
-        __wbg_set_subtree_id_32b8ceff55862e29: function(arg0, arg1) {
+        __wbg_set_subtree_id_7f776f86c6337160: function(arg0, arg1) {
             arg0.__yew_subtree_id = arg1 >>> 0;
         },
         __wbg_set_title_e2b1bad80032681e: function(arg0, arg1, arg2) {
@@ -524,7 +534,7 @@ function __wbg_get_imports() {
             const ret = arg0.subarray(arg1 >>> 0, arg2 >>> 0);
             return ret;
         },
-        __wbg_subtree_id_e65dfcc52d403fd9: function(arg0) {
+        __wbg_subtree_id_bb66e5e9d0f64dbd: function(arg0) {
             const ret = arg0.__yew_subtree_id;
             return isLikeNone(ret) ? 0x100000001 : (ret) >>> 0;
         },

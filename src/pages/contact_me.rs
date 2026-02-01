@@ -2,7 +2,7 @@ use gloo::{timers::callback::Timeout, utils::document};
 use wasm_bindgen_futures::{JsFuture, spawn_local};
 use web_sys::window;
 use yew::prelude::*;
-use yew_icons::{Icon, IconId};
+use yew_icons::{Icon, IconData};
 
 use crate::components::header::Header;
 
@@ -69,7 +69,7 @@ pub fn ContactMe(_: &ContactMeProps) -> Html {
             <Icon
               width={"1em".to_owned()} height={"1em".to_owned()}
               style={format!("color: {}", if *phone_number_copied {"green"} else {"black"})}
-              icon_id={if *phone_number_copied {IconId::BootstrapClipboardCheckFill} else {IconId::BootstrapClipboardFill}}
+              data={if *phone_number_copied {IconData::BOOTSTRAP_CLIPBOARD_CHECK_FILL} else {IconData::BOOTSTRAP_CLIPBOARD_FILL}}
               class="boxes__box__clip"
             />
             <span class="text-secondary">{"Phone Number: "}</span>
@@ -82,7 +82,7 @@ pub fn ContactMe(_: &ContactMeProps) -> Html {
             <Icon
               width={"1em".to_owned()} height={"1em".to_owned()}
               style={format!("color: {}", if *address_copied {"green"} else {"black"})}
-              icon_id={if *address_copied {IconId::BootstrapClipboardCheckFill} else {IconId::BootstrapClipboardFill}}
+              data={if *address_copied {IconData::BOOTSTRAP_CLIPBOARD_CHECK_FILL} else {IconData::BOOTSTRAP_CLIPBOARD_FILL}}
               class="boxes__box__clip"
             />
             <span class="text-secondary">{"Address: "}</span>

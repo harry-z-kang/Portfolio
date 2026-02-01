@@ -1,7 +1,7 @@
 use gloo::utils::document;
 use serde::Deserialize;
 use yew::prelude::*;
-use yew_icons::{Icon, IconId};
+use yew_icons::{Icon, IconData};
 
 use crate::components::header::Header;
 
@@ -53,13 +53,13 @@ pub fn MyWorks(_: &MyWorksProps) -> Html {
                   href={project.website.clone()}
                   class={classes!("btn", "btn-light")}
                 >
-                  <Icon icon_id={IconId::BootstrapEyeFill} /> {project.name.clone()}
+                  <Icon data={IconData::BOOTSTRAP_EYE_FILL} /> {project.name.clone()}
                 </a>
                 <a
                   href={project.github.clone()}
                   class={classes!("btn", "btn-dark")}
                 >
-                  <Icon icon_id={IconId::SimpleIconsGithub} /> {"Github"}
+                  <Icon data={IconData::SIMPLE_ICONS_GITHUB} /> {"Github"}
                 </a>
               </div>
             }
