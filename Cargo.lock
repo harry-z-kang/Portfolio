@@ -426,9 +426,9 @@ dependencies = [
 
 [[package]]
 name = "once_cell"
-version = "1.21.3"
+version = "1.21.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
+checksum = "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
 
 [[package]]
 name = "percent-encoding"
@@ -903,9 +903,9 @@ dependencies = [
 
 [[package]]
 name = "yew"
-version = "0.22.1"
+version = "0.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "94b446be974884d87d58548f1662bc50c051996203a17d2558f8d6c56942b6ac"
+checksum = "3346273ed61b636f5d84e6c696d40f380045b5565b36c5c47f8fc634b8bf5be6"
 dependencies = [
  "console_error_panic_hook",
  "futures",
@@ -928,10 +928,11 @@ dependencies = [
 
 [[package]]
 name = "yew-macro"
-version = "0.22.1"
+version = "0.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a708a4027c143be6ca160a341700b59f9ecc36a7ebd95e3c477018de8cf71c75"
+checksum = "479e94d645dde3749e81d488c1d32987509dd3b8c31650fcf6e3af1f370e913b"
 dependencies = [
+ "once_cell",
  "prettyplease",
  "proc-macro-error",
  "proc-macro2",
