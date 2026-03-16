@@ -736,9 +736,9 @@ dependencies = [
 
 [[package]]
 name = "tokise"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "decf97738ce15b9e9cc1671ea29b0f6c56538719e1a092d19cc2134bf144e40e"
+checksum = "ba44a1b36f42a95bd21b5e4acc1468547f75a73e7cf619312408d1f74c7fb687"
 dependencies = [
  "futures",
  "gloo",
