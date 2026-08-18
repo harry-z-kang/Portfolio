@@ -18,14 +18,18 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "sass": "^1.92.1",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.20",
-    "@types/node": "^25.0.3",
+    "@types/node": "^26.2.0",
     "@types/react": "^19.2.7",
     "@types/react-fontawesome": "^1.6.8",
     "eslint": "^10.2.1",
     "eslint-config-next": "^16.1.6"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "unrs-resolver@1.12.2": true
   }
 }
