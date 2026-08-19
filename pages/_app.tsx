@@ -9,7 +9,7 @@ const Portfolio = ({ Component, pageProps }: AppProps): React.ReactElement => {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
-        .register("/sw.js")
+        .register("/sw.js", { scope: "/" })
         .catch((error) => console.error("Service worker registration failed:", error));
     }
   }, []);
@@ -18,6 +18,9 @@ const Portfolio = ({ Component, pageProps }: AppProps): React.ReactElement => {
     <>
       <Head>
         <meta name="theme-color" content="#ffffff" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
       <Layout>
         <Component {...pageProps} />

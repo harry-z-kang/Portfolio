@@ -1,4 +1,4 @@
-const CACHE_NAME = 'harry-kang-portfolio-v1';
+const CACHE_NAME = 'harry-kang-portfolio-v2';
 const APP_SHELL = [
   '/',
   '/manifest.json',
@@ -21,7 +21,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((key) => key \!== CACHE_NAME).map((key) => caches.delete(key))))
+      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });
@@ -29,9 +29,19 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
 
-  if (request.method \!== 'GET') {
+  if (request.method !== 'GET') {
     return;
   }
+
+  const isSameOrigin = request.url.startsWith(self.location.origin);
+  const isStaticAsset =
+    request.url.includes('/_next/static/') ||
+    request.url.endsWith('.js') ||
+    request.url.endsWith('.css') ||
+    request.url.endsWith('.png') ||
+    request.url.endsWith('.jpg') ||
+    request.url.endsWith('.svg') ||
+    request.url.endsWith('.ico');
 
   if (request.mode === 'navigate') {
     event.respondWith(
@@ -46,6 +56,27 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  if (isStaticAsset && isSameOrigin) {
+    event.respondWith(
+      caches.match(request).then((cached) => {
+        if (cached) {
+          return cached;
+        }
+
+        return fetch(request)
+          .then((response) => {
+            if (response.ok) {
+              const copy = response.clone();
+              caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+            }
+            return response;
+          })
+          .catch(() => caches.match('/'));
+      })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(request).then((cached) => {
       if (cached) {
@@ -54,8 +85,10 @@ self.addEventListener('fetch', (event) => {
 
       return fetch(request)
         .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+          if (response.ok && isSameOrigin) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+          }
           return response;
         })
         .catch(() => caches.match('/'));
