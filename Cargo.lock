@@ -1200,9 +1200,9 @@ dependencies = [
 
 [[package]]
 name = "yew_icons"
-version = "0.10.0"
+version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d54ad895de028958553f84b46574832ee5ffdf53e2f80e2924a4cc501708fa7f"
+checksum = "af89c70eecd6248f7f0474318f1e13b6d5b061a00ccbed655e80e81c831ca245"
 dependencies = [
  "yew",
 ]
