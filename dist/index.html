@@ -7,8 +7,9 @@
   <meta name="description" content="Harry Kang's Portfolio" />
   
 <script type="module">
-import init, * as bindings from '/portfolio_yew-973c8ba621f3065c.js';
-const wasm = await init({ module_or_path: '/portfolio_yew-4eaff9490336cac6_bg.wasm' });
+import init, * as bindings from '/portfolio_yew-9a243bb161395872.js';
+
+const wasm = await init({ module_or_path: '/portfolio_yew-822c709aaebd9a6c_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -22,7 +23,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
   <link data-trunl rel="manifest" href="static/assets/manifest.json" />
   <link data-trunl rel="apple-touch-icon" href="static/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="/index-7ec688827a0eb966.css" integrity="sha384-kpLi3r41dm4S/rYeIeInYNPHn0hQoa5JnLKk1uGkVkwz6c6d5l5x4TEOCUTYWSLe"/>
-<link rel="modulepreload" href="/portfolio_yew-973c8ba621f3065c.js" crossorigin="anonymous" integrity="sha384-8kxDnKvjFgugckC9wsUqev9fy3U1L41uDhtFkHXUahq7NDkN/4vl06jN2zWsrNW8"><link rel="preload" href="/portfolio_yew-4eaff9490336cac6_bg.wasm" crossorigin="anonymous" integrity="sha384-11kOpGzgSAcDOmGfXQeqVT4jTS/Vqum2CN3nrOtaPBE5sbNS8DLbxrdX5JBMLYkO" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/portfolio_yew-9a243bb161395872.js" crossorigin="anonymous" integrity="sha384-PzipJaWPMZVYn399WWZIcYndrmxzPR/j/ImjbNnFmgqgGqhLT4ZHWKL4VvvUL++5"><link rel="preload" href="/portfolio_yew-822c709aaebd9a6c_bg.wasm" crossorigin="anonymous" integrity="sha384-zq4prvw3GDDxz0++0HmIVnYPcVDo1gPhxhxKiwoks+psrEwZlCepR8ezIVSEelje" as="fetch" type="application/wasm"></head>
 
 <body>
 
