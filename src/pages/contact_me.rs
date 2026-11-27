@@ -6,14 +6,12 @@ use yew_icons::{Icon, IconData};
 
 use crate::components::header::Header;
 
-const ADDRESS: &str = "200 W. Monroe St. Apt. 1528, Phoenix, AZ, 85003-1763";
 const EMAIL: &str = "harry.z.kang@outlook.com";
 const PHONE_NUMBER: &str = "+1 (470) 398-7810";
 
 #[component]
 pub fn ContactMe() -> Html {
     let phone_number_copied = use_state(|| false);
-    let address_copied = use_state(|| false);
 
     use_effect_with((), move |_| {
         document().set_title("Harry Kang | Contact Me");
@@ -44,7 +42,6 @@ pub fn ContactMe() -> Html {
     }
 
     let copy_phone_number = clipboard_callback(&phone_number_copied, String::from(PHONE_NUMBER));
-    let copy_address = clipboard_callback(&address_copied, String::from(ADDRESS));
 
     html! {
       <div class="container">
@@ -74,24 +71,9 @@ pub fn ContactMe() -> Html {
             <span class="text-secondary">{"Phone Number: "}</span>
             {PHONE_NUMBER}
           </button>
-          <button
-            type="button"
-            aria-label={if *address_copied {"Address copied"} else {"Copy address"}}
-            class="boxes__box"
-            onclick={copy_address.clone()}
-          >
-            <Icon
-              width={"1em".to_owned()} height={"1em".to_owned()}
-              style={format!("color: {}", if *address_copied {"green"} else {"black"})}
-              data={if *address_copied {IconData::BOOTSTRAP_CLIPBOARD_CHECK_FILL} else {IconData::BOOTSTRAP_CLIPBOARD_FILL}}
-              class="boxes__box__clip"
-            />
-            <span class="text-secondary">{"Address: "}</span>
-            {ADDRESS}
-          </button>
         </div>
         <p role="status" aria-live="polite">
-          {if *phone_number_copied || *address_copied {"Copied to clipboard."} else {""}}
+          {if *phone_number_copied {"Copied to clipboard."} else {""}}
         </p>
       </div>
     }
