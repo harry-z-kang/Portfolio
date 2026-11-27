@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import Icons, { IconAlignment } from "./Icons";
 import headerStyles from "../styles/components/Header.module.scss";
 

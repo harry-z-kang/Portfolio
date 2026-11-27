@@ -1,35 +1,14 @@
-import { GetServerSideProps, GetServerSidePropsResult, NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
-import { server } from "../config";
+import { activities } from "../activities";
 import aboutMeStyles from "../styles/aboutMe.module.scss";
 
-interface Activity {
-  title: string;
-  description: string;
-  details: string[];
-}
+export const getStaticProps = (() => ({
+  props: { activities },
+})) satisfies GetStaticProps;
 
-interface aboutMeProps {
-  activities: Activity[];
-}
-
-export const getServerSideProps: GetServerSideProps<
-  aboutMeProps
-> = async (): Promise<GetServerSidePropsResult<aboutMeProps>> => {
-  const res = await fetch(`${server}/api/activities`);
-  console.log(res);
-  const activities = await res.json();
-  console.log(activities);
-
-  return {
-    props: {
-      activities,
-    },
-  };
-};
-
-const AboutMe: NextPage<aboutMeProps> = ({ activities }): React.ReactElement => {
+const AboutMe = ({ activities }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className="container">
       <Head>
