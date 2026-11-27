@@ -1,3 +1,9 @@
 /target
 /dist
 node_modules
+
+# Next.js build output retained when switching branches
+/.next/
+/out/
+/build/
+*.tsbuildinfo
