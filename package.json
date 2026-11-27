@@ -2,33 +2,35 @@
   "name": "harry-kang-portfolio",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
-    "build": "next build --webpack",
-    "start": "next start --webpack",
-    "lint": "next lint"
+    "dev": "next dev",
+    "build": "npm run typecheck && next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/react-fontawesome": "^3.5.0",
-    "lodash": "^4.18.1",
     "next": "^16.3.1",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "sass": "^1.102.0",
-    "typescript": "^7.0.2"
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.25",
     "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
-    "@types/react-fontawesome": "^1.6.8",
     "eslint": "^10.8.1",
-    "eslint-config-next": "^16.3.1"
+    "eslint-config-next": "^16.3.1",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "sass": "^1.102.0",
+    "@typescript/native": "npm:typescript@^7.0.2"
   },
   "allowScripts": {
     "@parcel/watcher@2.6.0": true,
     "unrs-resolver@1.12.2": true
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

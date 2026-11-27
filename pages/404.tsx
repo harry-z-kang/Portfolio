@@ -1,5 +1,4 @@
 import Head from "next/head";
-import times from "lodash/times";
 import four04Styles from "../styles/404.module.scss";
 
 const PageNotFound = (): React.ReactElement => {
@@ -15,10 +14,10 @@ const PageNotFound = (): React.ReactElement => {
         <br /> B: reference to who?
         <br /> A: Segmentation fault
       </code>
-      {times(9, (i) =>
-        times(11, (j) => (
+      {Array.from({ length: 9 }, (_, i) =>
+        Array.from({ length: 11 }, (_, j) => (
           <div
-            key={i * 10 + j}
+            key={`${i}-${j}`}
             className={[four04Styles.cell, four04Styles[`cell-${i}-${j}`]].join(
               " "
             )}

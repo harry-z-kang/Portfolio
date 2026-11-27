@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { projects } from "../../../projects";
 
 const getProjects = (_req: NextApiRequest, res: NextApiResponse) => {

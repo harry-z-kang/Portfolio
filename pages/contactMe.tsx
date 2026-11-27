@@ -1,28 +1,13 @@
-import { useState } from "react";
-import { NextPage } from "next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faClipboard } from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
 import Header from "../components/Header";
+import { useClipboard } from "../hooks/useClipboard";
 import contactMeStyles from "../styles/contactMe.module.scss";
 
-const Contact: NextPage = (): React.ReactElement => {
-  const [phoneNumberCopied, setPhoneNumberCopied] = useState<Boolean>(false);
-  const [addressCopied, setAddressCopied] = useState<Boolean>(false);
-
-  const copyPhoneNumber = async () => {
-    await navigator.clipboard.writeText("+14703987810");
-    setPhoneNumberCopied(true);
-    setTimeout(() => setPhoneNumberCopied(false), 1000);
-  };
-
-  const copyAddress = async () => {
-    await navigator.clipboard.writeText(
-      "Apt. 1528, 200 W Monroe St., Phoenix, AZ, 85003-1763"
-    );
-    setAddressCopied(true);
-    setTimeout(() => setAddressCopied(false), 1000);
-  };
+const Contact = () => {
+  const phone = useClipboard("+14703987810");
+  const address = useClipboard("Apt. 1528, 200 W Monroe St., Phoenix, AZ, 85003-1763");
 
   return (
     <div className="container">
@@ -40,33 +25,40 @@ const Contact: NextPage = (): React.ReactElement => {
             harry.z.kang@outlook.com
           </a>
         </div>
-        <div
+        <button
+          type="button"
+          aria-label={phone.copied ? "Phone number copied" : "Copy phone number"}
           className={contactMeStyles.boxes__box}
-          onClick={async () => await copyPhoneNumber()}
+          onClick={phone.copy}
         >
           <FontAwesomeIcon
             size="1x"
-            color={phoneNumberCopied ? "green" : "black"}
-            icon={phoneNumberCopied ? faCheck : faClipboard}
+            color={phone.copied ? "green" : "black"}
+            icon={phone.copied ? faCheck : faClipboard}
             className={contactMeStyles.boxes__box__clip}
           />
           <span className="text-secondary">Phone Number: </span>
           +1 (470) 398-7810
-        </div>
-        <div
+        </button>
+        <button
+          type="button"
+          aria-label={address.copied ? "Address copied" : "Copy address"}
           className={contactMeStyles.boxes__box}
-          onClick={async () => await copyAddress()}
+          onClick={address.copy}
         >
           <FontAwesomeIcon
             size="1x"
-            color={addressCopied ? "green" : "black"}
-            icon={addressCopied ? faCheck : faClipboard}
+            color={address.copied ? "green" : "black"}
+            icon={address.copied ? faCheck : faClipboard}
             className={contactMeStyles.boxes__box__clip}
           />
           <span className="text-secondary">Address: </span>
           Apt 1528, 200 W Monroe St., Phoenix, AZ, 85003-1763
-        </div>
+        </button>
       </div>
+      <p role="status" aria-live="polite">
+        {phone.error || address.error || (phone.copied || address.copied ? "Copied to clipboard." : "")}
+      </p>
     </div>
   );
 };

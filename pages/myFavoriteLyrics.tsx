@@ -1,35 +1,16 @@
-import { GetServerSideProps, GetServerSidePropsResult, NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
-import { server } from "../config";
+import { lyrics } from "../lyrics";
 import myFavoriteLyricsStyles from "../styles/myFavoriteLyrics.module.scss";
 
-interface Lyric {
-  lines: string[];
-  title: string;
-  artist: string;
-}
+export const getStaticProps = (() => ({
+  props: { lyrics },
+})) satisfies GetStaticProps;
 
-interface myFavoriteLyricsProps {
-  lyrics: Lyric[];
-}
-
-export const getServerSideProps: GetServerSideProps<
-  myFavoriteLyricsProps
-> = async (): Promise<GetServerSidePropsResult<myFavoriteLyricsProps>> => {
-  const res = await fetch(`${server}/api/lyrics`);
-  const lyrics = await res.json();
-
-  return {
-    props: {
-      lyrics,
-    },
-  };
-};
-
-const MyFavoriteLyrics: NextPage<myFavoriteLyricsProps> = ({
+const MyFavoriteLyrics = ({
   lyrics,
-}): React.ReactElement => {
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className="container">
       <Head>

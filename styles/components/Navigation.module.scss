@@ -12,10 +12,19 @@
     right: 35px;
     top: 35px;
     cursor: pointer;
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    &:focus-visible {
+      outline: 3px solid config.$secondary-color;
+      outline-offset: 8px;
+    }
     @include config.easeInOut();
 
     $this: &;
     &__line {
+      display: block;
       width: 28px;
       height: 3px;
       margin: 0 0 5px 0;
@@ -115,7 +124,7 @@
           position: relative;
           font-size: 30px;
           text-transform: uppercase;
-          padding: 1rem, 0;
+          padding: 1rem 0;
           font-weight: 300;
           color: config.set-text-color(config.$primary-color);
           text-decoration: none;

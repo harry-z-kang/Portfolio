@@ -1,39 +1,18 @@
-import { GetServerSideProps, GetServerSidePropsResult, NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/Header";
-import { server } from "../config";
+import { projects } from "../projects";
 import myWorksStyles from "../styles/myWorks.module.scss";
 
-interface Project {
-  description: string;
-  img: string;
-  github: string;
-  website: string;
-  name: string;
-}
+export const getStaticProps = (() => ({
+  props: { projects },
+})) satisfies GetStaticProps;
 
-interface myWorksProps {
-  projects: Project[];
-}
-
-export const getServerSideProps: GetServerSideProps<
-  myWorksProps
-> = async (): Promise<GetServerSidePropsResult<myWorksProps>> => {
-  const res = await fetch(`${server}/api/projects`);
-  const projects = await res.json();
-
-  return {
-    props: {
-      projects,
-    },
-  };
-};
-
-const Works: NextPage<myWorksProps> = ({ projects }): React.ReactElement => {
+const Works = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className="container">
       <Head>
@@ -55,6 +34,7 @@ const Works: NextPage<myWorksProps> = ({ projects }): React.ReactElement => {
                 src={`/assets/project/${project.img}`}
                 alt={project.name}
                 fill={true}
+                sizes="(max-width: 768px) 100vw, (max-width: 1170px) 50vw, 33vw"
               />
               <p className={myWorksStyles.projects__item__card__desc}>
                 {project.description}

@@ -1,90 +1,69 @@
-import { FC, useState } from "react";
-import { NextRouter, useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import navigationStyles from "../styles/components/Navigation.module.scss";
 
-const titleName: string[] = [
-  "",
-  "aboutMe",
-  "myWorks",
-  "contactMe",
-  "myFavoriteLyrics",
-];
-const navMenu: string[] = [
-  "Home",
-  "About Me",
-  "My Works",
-  "Contact Me",
-  "My Favorite Lyrics",
-];
+const navigationItems = [
+  { href: "/", label: "Home" },
+  { href: "/aboutMe", label: "About Me" },
+  { href: "/myWorks", label: "My Works" },
+  { href: "/contactMe", label: "Contact Me" },
+  { href: "/myFavoriteLyrics", label: "My Favorite Lyrics" },
+] as const;
 
-const Navigation: FC = (): React.ReactElement => {
-  const router: NextRouter = useRouter();
+export default function Navigation() {
+  const router = useRouter();
+  const [showMenu, setShowMenu] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const menuList = useRef<HTMLUListElement>(null);
 
-  const [showMenu, setShowMenu] = useState<boolean>(false);
+  useEffect(() => {
+    if (showMenu) menuList.current?.querySelector("a")?.focus({ preventScroll: true });
+  }, [showMenu]);
+
+  const closeMenu = () => {
+    setShowMenu(false);
+    menuButton.current?.focus({ preventScroll: true });
+  };
 
   return (
-    <div className={navigationStyles.nav}>
-      <div
-        className={[
-          navigationStyles.nav__menuBtn,
-          navigationStyles[`nav__menuBtn${showMenu ? "-close" : ""}`],
-        ].join(" ")}
-        onClick={() => setShowMenu(!showMenu)}
+    <nav className={navigationStyles.nav} aria-label="Primary" onKeyDown={(event) => {
+      if (event.key === "Escape" && showMenu) {
+        event.preventDefault();
+        closeMenu();
+      }
+    }}>
+      <button
+        ref={menuButton}
+        type="button"
+        aria-label={showMenu ? "Close navigation" : "Open navigation"}
+        aria-expanded={showMenu}
+        aria-controls="primary-menu"
+        className={[navigationStyles.nav__menuBtn, showMenu && navigationStyles["nav__menuBtn-close"]].filter(Boolean).join(" ")}
+        onClick={() => setShowMenu((open) => !open)}
       >
-        <div className={navigationStyles.nav__menuBtn__line}></div>
-        <div className={navigationStyles.nav__menuBtn__line}></div>
-        <div className={navigationStyles.nav__menuBtn__line}></div>
-      </div>
-      <div
-        className={[
-          navigationStyles.nav__menu,
-          navigationStyles[`nav__menu${showMenu ? "-show" : ""}`],
-        ].join(" ")}
-      >
-        <div
-          className={[
-            navigationStyles.nav__menu__branding,
-            navigationStyles[`nav__menu__branding${showMenu ? "-show" : ""}`],
-          ].join(" ")}
-        >
-          <div className={navigationStyles.nav__menu__branding__portrait}></div>
+        <span className={navigationStyles.nav__menuBtn__line} />
+        <span className={navigationStyles.nav__menuBtn__line} />
+        <span className={navigationStyles.nav__menuBtn__line} />
+      </button>
+      <div id="primary-menu" inert={!showMenu} className={[navigationStyles.nav__menu, showMenu && navigationStyles["nav__menu-show"]].filter(Boolean).join(" ")}>
+        <div aria-hidden="true" className={[navigationStyles.nav__menu__branding, showMenu && navigationStyles["nav__menu__branding-show"]].filter(Boolean).join(" ")}>
+          <div className={navigationStyles.nav__menu__branding__portrait} />
         </div>
-        <ul
-          className={[
-            navigationStyles.nav__menu__list,
-            navigationStyles[`nav__menu__list${showMenu ? "-show" : ""}`],
-          ].join(" ")}
-        >
-          {navMenu.map((navTitle, index) => (
-            <li
-              className={[
-                navigationStyles.nav__menu__list__item,
-                navigationStyles[
-                  `nav__menu__list__item${showMenu ? "-show" : ""}`
-                ],
-                navigationStyles[
-                  `${
-                    titleName[index] === router.pathname.substring(1)
-                      ? "nav__menu__list__item-current"
-                      : ""
-                  }`
-                ],
-              ].join(" ")}
-              onClick={() => {
-                setShowMenu(false);
-              }}
-              key={index}
-            >
-              <Link href={`/${titleName[index]}`} className={navigationStyles.nav__menu__list__item__link}>
-                {navTitle}
+        <ul ref={menuList} className={[navigationStyles.nav__menu__list, showMenu && navigationStyles["nav__menu__list-show"]].filter(Boolean).join(" ")}>
+          {navigationItems.map(({ href, label }) => (
+            <li key={href} className={[
+              navigationStyles.nav__menu__list__item,
+              showMenu && navigationStyles["nav__menu__list__item-show"],
+              router.pathname === href && navigationStyles["nav__menu__list__item-current"],
+            ].filter(Boolean).join(" ")}>
+              <Link href={href} aria-current={router.pathname === href ? "page" : undefined} onClick={closeMenu} className={navigationStyles.nav__menu__list__item__link}>
+                {label}
               </Link>
             </li>
           ))}
         </ul>
       </div>
-    </div>
+    </nav>
   );
-};
-
-export default Navigation;
+}
