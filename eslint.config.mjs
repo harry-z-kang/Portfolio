@@ -5,5 +5,5 @@ import nextTypescript from "eslint-config-next/typescript";
 export default defineConfig([
   ...nextVitals,
   ...nextTypescript,
-  globalIgnores(["public/sw.js", "public/workbox-*.js"]),
+  globalIgnores(["target/**", "dist/**", "public/sw.js", "public/workbox-*.js"]),
 ]);

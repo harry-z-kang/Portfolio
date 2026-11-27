@@ -13,17 +13,17 @@
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/react-fontawesome": "^3.5.0",
-    "next": "^16.3.1",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@types/node": "^26.2.0",
-    "@types/react": "^19.2.18",
-    "eslint": "^10.8.1",
-    "eslint-config-next": "^16.3.1",
+    "@types/node": "^26.6.11",
+    "@types/react": "^19.3.3",
+    "eslint": "^10.15.0",
+    "eslint-config-next": "^16.4.6",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "sass": "^1.102.0",
+    "sass": "^1.108.2",
     "@typescript/native": "npm:typescript@^7.0.2"
   },
   "allowScripts": {
