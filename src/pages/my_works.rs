@@ -5,7 +5,7 @@ use yew_icons::{Icon, IconData};
 
 use crate::components::header::Header;
 
-#[derive(Deserialize, PartialEq, Properties)]
+#[derive(Deserialize, PartialEq)]
 pub struct Project {
     description: String,
     img: String,
@@ -14,15 +14,14 @@ pub struct Project {
     name: String,
 }
 
-#[derive(PartialEq, Properties)]
-pub struct MyWorksProps {}
+#[component]
+pub fn MyWorks() -> Html {
+    let projects = use_memo((), |_| {
+        serde_json::from_str::<Vec<Project>>(include_str!("../../static/db/projects.json"))
+            .expect("embedded projects data must be valid JSON")
+    });
 
-#[function_component]
-pub fn MyWorks(_: &MyWorksProps) -> Html {
-    let file = include_str!("../../static/db/projects.json");
-    let projects: Vec<Project> = serde_json::from_str(&file).unwrap();
-
-    use_effect(move || {
+    use_effect_with((), move |_| {
         document().set_title("Harry Kang | My Works");
     });
 
@@ -35,7 +34,7 @@ pub fn MyWorks(_: &MyWorksProps) -> Html {
         <div class="projects">
           {projects.iter().map(|project| {
             html! {
-              <div class="projects__item" >
+              <div key={project.name.clone()} class="projects__item" >
                 <a
                   href={project.website.clone()}
                   class="projects__item__card"

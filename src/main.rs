@@ -2,7 +2,7 @@ mod components;
 mod pages;
 mod route;
 
-use yew::{function_component, html, Html};
+use yew::{Html, component, html};
 use yew_router::prelude::*;
 
 use crate::pages::about_me::AboutMe;
@@ -27,7 +27,7 @@ fn switch(routes: Route) -> Html {
     }
 }
 
-#[function_component]
+#[component]
 fn App() -> Html {
     html! {
       <BrowserRouter>

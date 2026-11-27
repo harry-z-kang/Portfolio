@@ -4,11 +4,10 @@ version = "1.0.0"
 edition = "2024"
 
 [dependencies]
-gloo = "0.12.0"
-gloo-file = "0.4.0"
-serde = "1.0.219"
+gloo = { version = "0.12.0", default-features = false, features = ["utils", "timers"] }
+serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.140"
-web-sys = { version = "0.3.81", features = ["Navigator", "Clipboard"] }
+web-sys = { version = "0.3.81", features = ["Navigator", "Clipboard", "HtmlElement"] }
 wasm-bindgen = "0.2.130"
 wasm-bindgen-futures = "0.4.58"
 yew = { version = "0.23.0", features = ["csr"] }

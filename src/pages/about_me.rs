@@ -4,22 +4,21 @@ use yew::prelude::*;
 
 use crate::components::header::Header;
 
-#[derive(Deserialize, PartialEq, Properties)]
+#[derive(Deserialize, PartialEq)]
 pub struct Activity {
     title: String,
     description: String,
     details: Vec<String>,
 }
 
-#[derive(PartialEq, Properties)]
-pub struct AboutMeProps {}
+#[component]
+pub fn AboutMe() -> Html {
+    let activities = use_memo((), |_| {
+        serde_json::from_str::<Vec<Activity>>(include_str!("../../static/db/activities.json"))
+            .expect("embedded activities data must be valid JSON")
+    });
 
-#[function_component]
-pub fn AboutMe(_: &AboutMeProps) -> Html {
-    let file = include_str!("../../static/db/activities.json");
-    let activities: Vec<Activity> = serde_json::from_str(&file).unwrap();
-
-    use_effect(move || {
+    use_effect_with((), move |_| {
         document().set_title("Harry Kang | About Me");
     });
 
@@ -44,7 +43,7 @@ pub fn AboutMe(_: &AboutMeProps) -> Html {
           </div>
           {activities.iter().map(|activity| {
             html! {
-              <div class="about__job">
+              <div key={activity.title.clone()} class="about__job">
                 <h3>{activity.title.clone()}</h3>
                 <h5>{activity.description.clone()}</h5>
                 <p>

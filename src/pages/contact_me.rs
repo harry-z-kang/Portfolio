@@ -6,19 +6,16 @@ use yew_icons::{Icon, IconData};
 
 use crate::components::header::Header;
 
-#[derive(PartialEq, Properties)]
-pub struct ContactMeProps {}
-
 const ADDRESS: &str = "200 W. Monroe St. Apt. 1528, Phoenix, AZ, 85003-1763";
 const EMAIL: &str = "harry.z.kang@outlook.com";
 const PHONE_NUMBER: &str = "+1 (470) 398-7810";
 
-#[function_component]
-pub fn ContactMe(_: &ContactMeProps) -> Html {
+#[component]
+pub fn ContactMe() -> Html {
     let phone_number_copied = use_state(|| false);
     let address_copied = use_state(|| false);
 
-    use_effect(move || {
+    use_effect_with((), move |_| {
         document().set_title("Harry Kang | Contact Me");
     });
 
@@ -62,7 +59,9 @@ pub fn ContactMe(_: &ContactMeProps) -> Html {
               {EMAIL}
             </a>
           </div>
-          <div
+          <button
+            type="button"
+            aria-label={if *phone_number_copied {"Phone number copied"} else {"Copy phone number"}}
             class="boxes__box"
             onclick={copy_phone_number.clone()}
           >
@@ -74,8 +73,10 @@ pub fn ContactMe(_: &ContactMeProps) -> Html {
             />
             <span class="text-secondary">{"Phone Number: "}</span>
             {PHONE_NUMBER}
-          </div>
-          <div
+          </button>
+          <button
+            type="button"
+            aria-label={if *address_copied {"Address copied"} else {"Copy address"}}
             class="boxes__box"
             onclick={copy_address.clone()}
           >
@@ -87,8 +88,11 @@ pub fn ContactMe(_: &ContactMeProps) -> Html {
             />
             <span class="text-secondary">{"Address: "}</span>
             {ADDRESS}
-          </div>
+          </button>
         </div>
+        <p role="status" aria-live="polite">
+          {if *phone_number_copied || *address_copied {"Copied to clipboard."} else {""}}
+        </p>
       </div>
     }
 }

@@ -4,22 +4,21 @@ use yew::prelude::*;
 
 use crate::components::header::Header;
 
-#[derive(Deserialize, PartialEq, Properties)]
+#[derive(Deserialize, PartialEq)]
 pub struct Lyric {
     lines: Vec<String>,
     title: String,
     artist: String,
 }
 
-#[derive(PartialEq, Properties)]
-pub struct MyFavoriteLyricsProps {}
+#[component]
+pub fn MyFavoriteLyrics() -> Html {
+    let lyrics = use_memo((), |_| {
+        serde_json::from_str::<Vec<Lyric>>(include_str!("../../static/db/lyrics.json"))
+            .expect("embedded lyrics data must be valid JSON")
+    });
 
-#[function_component]
-pub fn MyFavoriteLyrics(_: &MyFavoriteLyricsProps) -> Html {
-    let file = include_str!("../../static/db/lyrics.json");
-    let lyrics: Vec<Lyric> = serde_json::from_str(&file).unwrap();
-
-    use_effect(move || {
+    use_effect_with((), move |_| {
         document().set_title("Harry Kang | My Favorite Lyrics");
     });
 
@@ -32,7 +31,7 @@ pub fn MyFavoriteLyrics(_: &MyFavoriteLyricsProps) -> Html {
         <div class="lyrics">
           {lyrics.iter().map(|lyric| {
             html! {
-              <div class="lyrics__item">
+              <div key={format!("{}-{}", lyric.artist, lyric.title)} class="lyrics__item">
                 <div class="lyrics__item__heading">
                   {lyric.title.clone()}{" -- "}{lyric.artist.clone()}
                 </div>

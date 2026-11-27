@@ -3,12 +3,9 @@ use yew::prelude::*;
 
 use crate::components::icons::{IconAlignment, Icons};
 
-#[derive(PartialEq, Properties)]
-pub struct HomeProps {}
-
-#[function_component]
-pub fn Home(_: &HomeProps) -> Html {
-    use_effect(move || {
+#[component]
+pub fn Home() -> Html {
+    use_effect_with((), move |_| {
         document().set_title("Harry Kang | Home");
     });
 

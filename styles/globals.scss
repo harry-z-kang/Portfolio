@@ -70,7 +70,7 @@ h3 {
       background: rgba(config.$secondary-color, 1);
     }
 
-    &::window-inactive {
+    &:window-inactive {
       background: rgba(config.$secondary-color, 0.2);
     }
   }
