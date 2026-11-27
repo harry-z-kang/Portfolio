@@ -7,7 +7,6 @@ import contactMeStyles from "../styles/contactMe.module.scss";
 
 const Contact = () => {
   const phone = useClipboard("+14703987810");
-  const address = useClipboard("Apt. 1528, 200 W Monroe St., Phoenix, AZ, 85003-1763");
 
   return (
     <div className="container">
@@ -40,24 +39,9 @@ const Contact = () => {
           <span className="text-secondary">Phone Number: </span>
           +1 (470) 398-7810
         </button>
-        <button
-          type="button"
-          aria-label={address.copied ? "Address copied" : "Copy address"}
-          className={contactMeStyles.boxes__box}
-          onClick={address.copy}
-        >
-          <FontAwesomeIcon
-            size="1x"
-            color={address.copied ? "green" : "black"}
-            icon={address.copied ? faCheck : faClipboard}
-            className={contactMeStyles.boxes__box__clip}
-          />
-          <span className="text-secondary">Address: </span>
-          Apt 1528, 200 W Monroe St., Phoenix, AZ, 85003-1763
-        </button>
       </div>
       <p role="status" aria-live="polite">
-        {phone.error || address.error || (phone.copied || address.copied ? "Copied to clipboard." : "")}
+        {phone.error || (phone.copied ? "Copied to clipboard." : "")}
       </p>
     </div>
   );

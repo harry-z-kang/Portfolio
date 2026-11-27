@@ -2,11 +2,8 @@
 
 .boxes {
   display: grid;
-  grid-template-areas:
-    "email phone"
-    "address address";
+  grid-template-areas: "email phone";
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 10%;
   margin-top: 5rem;
 
@@ -62,10 +59,6 @@
 
     &:nth-child(2) {
       grid-area: phone;
-    }
-
-    &:nth-child(3) {
-      grid-area: address;
     }
   }
 }
