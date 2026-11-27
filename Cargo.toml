@@ -4,15 +4,15 @@ version = "1.0.0"
 edition = "2024"
 
 [dependencies]
-gloo = { version = "0.12.0", default-features = false, features = ["utils", "timers"] }
-serde = { version = "1.0.219", features = ["derive"] }
-serde_json = "1.0.140"
-web-sys = { version = "0.3.81", features = ["Navigator", "Clipboard", "HtmlElement"] }
+gloo = { version = "0.13.0", default-features = false, features = ["utils", "timers"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+web-sys = { version = "0.3.107", features = ["Navigator", "Clipboard", "HtmlElement"] }
 wasm-bindgen = "0.2.130"
-wasm-bindgen-futures = "0.4.58"
+wasm-bindgen-futures = "0.4.80"
 yew = { version = "0.23.0", features = ["csr"] }
 yew-router = "0.20.0"
-yew_icons = { version = "0.10.0", features = ["bootstrap", "simple_icons"] }
+yew_icons = { version = "0.11.0", features = ["bootstrap", "simple_icons"] }
 
 [profile.release]
 lto = true

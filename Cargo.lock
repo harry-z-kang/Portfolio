@@ -170,9 +170,9 @@ dependencies = [
 
 [[package]]
 name = "gloo"
-version = "0.12.0"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc13cc21c3835347855fd83900414d94716adc1e332f09f7fba56f21be127214"
+checksum = "8dde91ca3d312345fd0f837dda5f8dbb7af00408e259f5fe338c8bd4a8606dd7"
 dependencies = [
  "gloo-timers 0.4.1",
  "gloo-utils 0.3.1",
@@ -511,7 +511,7 @@ dependencies = [
 name = "portfolio_yew"
 version = "1.0.0"
 dependencies = [
- "gloo 0.12.0",
+ "gloo 0.13.0",
  "serde",
  "serde_json",
  "wasm-bindgen",
@@ -1012,9 +1012,9 @@ dependencies = [
 
 [[package]]
 name = "yew_icons"
-version = "0.10.1"
+version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "af89c70eecd6248f7f0474318f1e13b6d5b061a00ccbed655e80e81c831ca245"
+checksum = "b16353c32adc8941cbfb23231b636256e8d7eeddc540607928f44194d92a47a4"
 dependencies = [
  "yew",
 ]
