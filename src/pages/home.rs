@@ -15,7 +15,7 @@ pub fn Home(_: &HomeProps) -> Html {
     html! {
       <div class="container">
         <h1 class={classes!("lg-heading", "home__heading")}>
-          {"Harry"} <span class="text-secondary">{"Kang"}</span>
+          {"Harry "}<span class="text-secondary">{"Kang"}</span>
         </h1>
         <h2 class="sm-heading">
           {"Programmer, Musician, Technology Enthusiast & Verification Engineer @

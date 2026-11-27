@@ -29,6 +29,7 @@ pub fn header(props: &HeaderProps) -> Html {
         <div class="landing__heading">
           <h1 class="lg-heading">
             {uncolored_heading}
+            {" "}
             <span class="text-secondary">
               {colored_heading}
             </span>
