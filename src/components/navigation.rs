@@ -15,15 +15,6 @@ const TITLE_NAME: [Route; 5] = [
 pub fn navigation() -> Html {
     let show_menu = use_state(|| false);
     let menu_button = use_node_ref();
-    let first_link = use_node_ref();
-    {
-        let first_link = first_link.clone();
-        use_effect_with(*show_menu, move |open| {
-            if *open && let Some(link) = first_link.cast::<web_sys::HtmlElement>() {
-                let _ = link.focus();
-            }
-        });
-    }
     let router_location = use_route::<Route>().unwrap_or_default();
     let toggle_show_menu = {
         let show_menu = show_menu.clone();
@@ -104,7 +95,7 @@ pub fn navigation() -> Html {
                   )}
                   onclick={close_show_menu.clone()}
                 >
-                  <Link<Route> to={nav_title} anchor_ref={if nav_title == Route::Home {first_link.clone()} else {NodeRef::default()}} classes="nav__menu__list__item__link">
+                  <Link<Route> to={nav_title} classes="nav__menu__list__item__link">
                     {nav_title.to_string()}
                   </Link<Route>>
                 </li>

@@ -32,7 +32,9 @@ fn App() -> Html {
     html! {
       <BrowserRouter>
         <Navigation/>
-        <Switch<Route> render={switch}/>
+        <main id="main-content">
+          <Switch<Route> render={switch}/>
+        </main>
       </BrowserRouter>
     }
 }
