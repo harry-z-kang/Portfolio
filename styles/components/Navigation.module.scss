@@ -175,3 +175,15 @@
     }
   }
 }
+
+// Keyboard navigation must not wait for the decorative menu transitions.
+.nav:has(.nav__menuBtn:focus-visible) .nav__menu *,
+.nav__menu:focus-within * {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav * {
+    transition: none;
+  }
+}

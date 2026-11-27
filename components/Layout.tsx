@@ -9,7 +9,7 @@ const Layout: FC<LayoutProps> = ({ children }): React.ReactElement => {
   return (
     <div>
       <Navigation />
-      {children}
+      <main id="main-content">{children}</main>
     </div>
   );
 };

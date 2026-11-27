@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import navigationStyles from "../styles/components/Navigation.module.scss";
@@ -15,11 +15,6 @@ export default function Navigation() {
   const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
-  const menuList = useRef<HTMLUListElement>(null);
-
-  useEffect(() => {
-    if (showMenu) menuList.current?.querySelector("a")?.focus({ preventScroll: true });
-  }, [showMenu]);
 
   const closeMenu = () => {
     setShowMenu(false);
@@ -50,7 +45,7 @@ export default function Navigation() {
         <div aria-hidden="true" className={[navigationStyles.nav__menu__branding, showMenu && navigationStyles["nav__menu__branding-show"]].filter(Boolean).join(" ")}>
           <div className={navigationStyles.nav__menu__branding__portrait} />
         </div>
-        <ul ref={menuList} className={[navigationStyles.nav__menu__list, showMenu && navigationStyles["nav__menu__list-show"]].filter(Boolean).join(" ")}>
+        <ul className={[navigationStyles.nav__menu__list, showMenu && navigationStyles["nav__menu__list-show"]].filter(Boolean).join(" ")}>
           {navigationItems.map(({ href, label }) => (
             <li key={href} className={[
               navigationStyles.nav__menu__list__item,
