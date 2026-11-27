@@ -19,7 +19,7 @@ export RUSTUP_TOOLCHAIN="$rust_version"
 
 if ! command -v trunk >/dev/null 2>&1 || [[ "$(trunk --version)" != "trunk $trunk_version" ]]; then
   curl --fail --silent --show-error --location \
-    "https://github.com/trunk-rs/trunk/releases/download/v${trunk_version}/trunk-x86_64-unknown-linux-gnu.tar.gz" \
+    "https://github.com/trunk-rs/trunk/releases/download/v${trunk_version}/trunk-x86_64-unknown-linux-musl.tar.gz" \
     --output "$tools_dir/trunk.tar.gz"
   tar -xzf "$tools_dir/trunk.tar.gz" -C "$tools_dir" trunk
   export PATH="$tools_dir:$PATH"
